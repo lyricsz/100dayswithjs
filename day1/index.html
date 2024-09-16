@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <h1>100 Days With JavaScript</h1>
+        <nav>
+            <ul>
+                <li><a href="./">Home</a></li>
+                <li><a href="./days">JS 100</a></li>
+                <li><a href="./about">About</a></li>
+                <li><a href="./contact">Contact</a></li>
+            </ul>
+        </nav>
+        <aside>
+            <select name="0" id="select">
+
+            </select>
+        </aside>
+    </header>
+    <main>
+        <aside>
+            <nav>
+                <ol>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#tutorial">Tutorial</a></li>
+                    <li><a href="#task">Task</a></li>
+                </ol>
+            </nav>
+        </aside>
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>Hello World! And welcome to "100 days with JavaScript". Today's the first day and we're going to learn about how outputting works with JavaScript. 
+            There are some other ways to ouput a value in JavaScript. But we'll have to take things slow. </p>
+        </section>
+        <section id="tutorial">
+            <h2>Tutorial</h2>
+            <p>First of all, i want to believe you've had some basic ideas on HTML5, and some CSS. Please note that you don't need to be good in them to follow this projects, but a basic understanding of them is necessary. </p>
+            <p>To create a JavaScript file, we use the <small>.js</small> file extension. Open your favorite text editor and create a new file named "index.html". Add a DOCTYPE declaration, root element with head and body element nested to the root/html element. 
+            To further explain things, your code should look like below: </p>
+            <code>
+                &lt;!DOCTYPE html&gt;<br>
+                &lt;html&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;<br> 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;<br>
+                &lt;/html&gt;<br>
+            </code>
+            <p>There are tons of ways to include JS Code in your HTML file. However what exactly is JavaScript? And what was it used for? </p>
+            <p>JavaScript is a dynamic language or prototyped based language used to add interactivity to web page. However, JavaScript has grown to amaze we programmers in the last few years. It can be used to build Web app, Web games, Artificial Intelligent(AI), IoT(Internet-Of-Things) devices, Machine Learning and lot more. </p>
+            <p>If you're being cautious, you'll have notice  JavaScript is not limitted to webpage usage alone. It can be used outside the browsers. But maybe we'll scratch that or maybe we won't. I'm not quite sure yet. </p>
+            <p>To include JavaScript code in a HTML file, we make use of the script tag. However the way we use it now differs. We now have different ways, like: 'module(import and export), importmaps'. To cut it short, there atleast 4 ways to use JavaScript in your Html file. However we'll explain it more as we move on. </p> 
+            <p>To use the script tag (which we'll be using for this tutorial), Start with the opening script tag, then follows with some JavaScript code, then close the script tag. </p>
+            <code>
+                <b>...</b>
+                <br>&lt;script&gt;<br>
+                //JavaScript Code Goes Here<br>
+                &lt;/script&gt;
+                <b>...</b>
+            </code>
+            <p>To use comments in JavaScript, we use the "//". Anything that follows this double-slash will be ignored by the browser otherwise known as the JavaScript Interpreter(JavaScript is a language with an Interpreter not Compiled). </p>
+            <code>
+                <b>...</b>
+                <br>&lt;script&gt;<br>
+                //I'm ignored by the browser<br>
+                &lt;/script&gt;
+                <b>...</b>
+            </code>
+            <p>Just in case you're wondering what the full code is or where exactyly are you going to put your JavaScript.  My most recommeneded place to put your JavaScript code is right before the closing body tag. </p>
+            <code>
+                &lt;!DOCTYPE html&gt;<br>
+                &lt;html&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;<br> 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//I'm ignored by the browser<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;<br>
+                &lt;/html&gt;<br>
+            </code>
+            <p>Alright! Time for some code. If  we want to display output using JavaScript, we can use the DOM manipulation, alert, console or using the document.write method. Note: A method and a function are literally the same thing. What are those? We'll explain them in future day's by his grace. We won't explain the DOM manipulation in this tutorial. </p>
+            <h3>Using Alert Function</h3>
+            <p>
+                Alert function or method is from the window object. The Window Object provides alot of other methods and propeties?  Maybe. A simple analogy for both method and properties would be to think of a player in a game with health as it's properties, and jump as it's method. So, you got the logic? Method are what you can do. Properties are like what belong to you, like the health, the stamina e.t.c.  
+            </p>
+            <p>Since the Alert method is from the window, we can use both syntax below: </p>
+            <code>
+                //syntax 1
+                <br>
+                window.alert("Hello World!");<br>
+                //syntax 2 <br>
+                alert("Hello World!")
+            </code>
+            <p>I love using syntax 2, but you can use any syntax that you like. The full code is listed below: (Note: Try the first syntax) </p>
+            <code>
+                &lt;!DOCTYPE html&gt;<br>
+                &lt;html&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;<br> 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Hello World!");<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;<br>
+                &lt;/html&gt;<br>
+            </code>
+            <h3>Using console.log</h3>
+            <p>The console.log is a method of the console. You can pass in the string "Hello World" to it just like our earlier example. Since it's not a window method, the console must be present. </p>
+            <code>
+                &lt;!DOCTYPE html&gt;<br>
+                &lt;html&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;<br> 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Hello World!");<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;<br>
+                &lt;/html&gt;<br>
+            </code>
+            <p>Open the console in your preferred browser and you should see the message "Hello World!"</p>
+            <h3>Using the write method of the document</h3>
+            <p>Think of the window object as BOM (Browser Object Model) and the document object as DOM (Document Object Model). The document.write is not much of a preferred choice, instead most of us use console or dom manipulation. The below example shows basic use of the document.write method. 
+            </p>
+            <code>
+                &lt;!DOCTYPE html&gt;<br>
+                &lt;html&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;<br> 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("Hello World!")<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;<br>
+                &lt;/html&gt;<br>
+            </code>
+            <p>The passed in string can be html code. Example: </p>
+            <code>
+                &lt;!DOCTYPE html&gt;<br>
+                &lt;html&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;<br> 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("&lt;h1&gt;Hello World!&lt;/h1&gt;")<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;<br>
+                &lt;/html&gt;<br>
+            </code>
+            <p>And that leads us to our project. We'll be building a project that outputs the name of all the continent available in the Earth as of date. This continents are "Africa", "Europe", "North America", "South America", "Asia", "Australia", "Antarctica". Below is our first project: </p>
+            <code>
+                &lt;!DOCTYPE html&gt;<br>
+                &lt;html&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;<br> 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;My First Project &lt;/title&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("&lt;h1&gt;Africa&lt;/h1&gt;")<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("&lt;h1&gt;Europe&lt;/h1&gt;")<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("&lt;h1&gt;North America&lt;/h1&gt;")<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("&lt;h1&gt;South America&lt;/h1&gt;")<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("&lt;h1&gt;Asia&lt;/h1&gt;")<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("&lt;h1&gt;Australia&lt;/h1&gt;")<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("&lt;h1&gt;Antarctica&lt;/h1&gt;")<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;<br>
+                &lt;/html&gt;<br>
+            </code>
+            <p>Since we're basically injecting the elements to our document, you can add some CSS to it and make it yours. And that marks the end of the <b>Day 1</b></p>
+        </section>
+        <section id="task">
+            <h2>Task</h2>
+            <p>Go ahead and use alert, and console.log for our project, instead of document.write. </p>
+        </section>
+    </main>
+    <footer>
+        
+    </footer>
+    <script>
+        const select = document.getElementById("select");
+        select.onchange = (e) => {
+            setTimeout(() => {
+                window.location = "./../" + select.value;
+            })
+        }
+        for(i = 0; i < 100; i++){
+            const option = document.createElement('option');
+            option.value = "day" + (i + 1);
+            if(i == select.name){
+                option.selected = true;
+                option.disabled = true;
+            }
+            option.textContent = "Day " + (i + 1);
+            option.style.color = "gray"
+            select.appendChild(option);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+@import url("./../../css/style.css");
+
+p, code {
+    text-align: left;
+    padding: 4px;
+}
+
+p{
+    text-indent: 20px;
+}
+
+code {
+    color: lightblue;
+}
+
+ol{
+    list-style-type: disc;
+    text-align: left;
+}
