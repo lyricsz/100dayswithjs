@@ -56,3 +56,27 @@ code {
     text-align: left;
     padding: 20px;
 }
+
+p, code {
+    text-align: left;
+    padding: 4px;
+}
+
+p{
+    text-indent: 20px;
+}
+
+code {
+    color: lightblue;
+}
+
+ol{
+    list-style-type: disc;
+    text-align: left;
+}
+
+dt {
+    color: red;
+    border-bottom: 2px solid red;
+    display: inline-block;
+}

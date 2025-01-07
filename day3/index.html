@@ -3,17 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title></title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <header>
+        <h1>100 Days With JavaScript</h1>
+        <nav>
+            <ul>
+                <li><a href="./">Home</a></li>
+                <li><a href="./days">JS 100</a></li>
+                <li><a href="./about">About</a></li>
+                <li><a href="./contact">Contact</a></li>
+            </ul>
+        </nav>
+        <aside>
+            <select name="0" id="select">
 
+            </select>
+        </aside>
     </header>
     <main>
-
+        <aside>
+            <nav>
+                <ol>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#tutorial">Tutorial</a></li>
+                    <li><a href="#task">Task</a></li>
+                </ol>
+            </nav>
+        </aside>
     </main>
     <footer>
         
     </footer>
+    <script>
+        const select = document.getElementById("select");
+        select.onchange = (e) => {
+            setTimeout(() => {
+                window.location = "./../" + select.value;
+            })
+        }
+        for(i = 0; i < 100; i++){
+            const option = document.createElement('option');
+            option.value = "day" + (i + 1);
+            if(i == select.name){
+                option.selected = true;
+                option.disabled = true;
+            }
+            option.textContent = "Day " + (i + 1);
+            option.style.color = "gray"
+            select.appendChild(option);
+        }
+    </script>
 </body>
 </html>

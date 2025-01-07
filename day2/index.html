@@ -3,17 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Variables - 100 Days with JS - Day 2</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <header>
+        <h1>100 Days With JavaScript</h1>
+        <nav>
+            <ul>
+                <li><a href="./">Home</a></li>
+                <li><a href="./days">JS 100</a></li>
+                <li><a href="./about">About</a></li>
+                <li><a href="./contact">Contact</a></li>
+            </ul>
+        </nav>
+        <aside>
+            <select name="1" id="select">
 
+            </select>
+        </aside>
     </header>
     <main>
+        <nav>
+            <ol>
+                <li>Introduction</li>
+                <li>Tutorial</li>
+                <li>Task</li>
+            </ol>
+        </nav>
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>Hello Folks. Welcome to day 2 in our 100 days journey with JavaScript. Today we'll learn about variables and some data types. We'll cover all the data types except some other concepts we'll learn about in the future like Nodes, and API's. Let's get started. 
+        </section>
+        <section id="tutorial">
+            <h2>Tutorial</h2>
+            <p>Variables are the core fundamental of any programming languages. It's a very important concept and it's very easy to understand once you think of it this way -> A Variable is a container used to hold / store value or values. Hence when we refer to that variable , we're actually referring to the value it stored. </p>
+            <p>Variables serve as a pointer that points to the value in the memory location on our computer. To not really get into some archaic details, let's make use of the fact that JavaScript is a high level programming language. Learning about how a variable holds a value is not really important since JavaScript takes care of all of that as opposed to a low level programming language.</p>
+            <p>So, let's really get our feet wet with understanding variables. </p>
+            <p>Think of a variable as what we use in programming world to hold a data / value / expression. (More on expression later) </p>
+            <p>Let's see some example, so we can get a better understanding of variables and what it's used for</p>
+            <p>Suppose i wanted to print out an address of a person using the log method of the console but the whole address is so long and imagine if i wanted to use the address in some other part of my program? I have two options, i can either copy and paste or type manually. Now, you might think, "Why not just copy and paste? "  Imagine it's not exactly a simple project but a complex project, you'll have to find where you actually print out the address. </p>
+            <p>There are alot of other reasons why variables are so important that you as a programmer will figure out yourself when you write programs. </p>
+            <fieldset>
+                <legend>Note</legend>
+                <p>Another example is when you've used the address (from our earlier example) in many places in your program, then you want to change the last word in the address... You'll have to find all the address and remove the last word one by one which might take alot of time... </p>
+                <p>Remember, always used variable to store your data</p>
+            </fieldset>
+            <p>Now, let's look at the syntax for creating a variable and giving it a value (we love using the word "declaring a variable" and not "creating a variable", i use it here for simplicity):</p>
+            <code>var variable_name = value</code>
+            <p>or</p>
+            <code>let variable_name = value</code>
+            <p>or</p>
+            <code>const variable_name = value</code> 
+            <p>We use the above syntax to create a variable. The var, let, and const are the keywords used to create our variable. The variable_name is a unique name that we give to our variable. The value is (obviously) the value of our variable</p>
+            <fieldset>
+                <legend>Note</legend>
+                <p>Picking a variable name carefully is so important. For starters, your variable name must be descriptive and must not be a keyword (this is to avoid conflict, so that the interpreter won't think of your variable as a keyword). Your variable name must not contain any of the arithmetic operators and other operators (logical and relational). Your variable name can't be a built-in object such as console (more on objects and api's later)</p>
+                <p>We'll talk about all of these later in the course. We've already seen some keywords such as var, let, const. For more keywords in JavaScript, kindly visit: </p>
+                <p>About the operators, just note them for now (we'll discussed about operators in the future) : + , - , * , ** , &&, ||, ! , >>, &lt;&lt;, %, ~ , ( , ), / </p>
+                <p>Other special characters should be avoided generally. These characters include: ', ", { , }, \ , @ , # , $ , ` , . , <span style="color: red;"> , </span></p>
+            </fieldset>
+            <p>Let's see an example of how to declare and use variables in our projects: </p>
+            <code>
+                &lt;!DOCTYPE html&gt;<br>
+                &lt;html&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;<br> 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt; Variables - Example 1 &lt;/title&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var name = "Onaleye Promise Joseph"<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var age = 19 <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var height = 24<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var pretty = true<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var crush = ["Simi", "Tyla", "Bai Lu", "Rosey"]<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(name)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(age)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(height)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(pretty)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(crush)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;<br>
+                &lt;/html&gt;<br>
+            </code>
+            <p>Run the above code in a web browser and navigate to the console (for pc users) or use an editor that comes with console (for android / ios users -- e.g ACode) </p>
+            <p>To avoid unneccesary line of codes, i'll refrain from typing all the codes from now on. I'll include just the JavaScript code that's expected to be inside the script tag (it's content) , placed just right before the closing body tag. </p>
+            <p>So, the last example will now be written like this: </p>
+            <code>
+                var name = "Onaleye Promise Joseph"<br>
+                var age = 19 <br>
+                var height = 24<br>
+                var pretty = true<br>
+                var crush = ["Simi", "Tyla", "Bai Lu", "Rosey"]<br>
+                console.log(name)<br>
+                console.log(age)<br>
+                console.log(height)<br>
+                console.log(pretty)<br>
+                console.log(crush)<br>
+            </code>
+            <p>Hopefully, you get the logic. </p>
+            <fieldset>
+                <legend>
+                    Note
+                </legend>
+                <p>JavaScript is case-sensitive. In other words var is different from Var or VaR or VAr e.t.c In other words, var is a keyword but Var is not a keyword. Hence the below snippet is valid in JavaScript:</p>
+                <code>
+                    ... <br>
+                    var Var = "Hello"<br>
+                    alert(Var);<br>
+                    ... <br>
+                </code>
+                <p>Also, since JavaScript is case-sensitive, the variable name is different from Name or NAme. Hence, you must be very careful about the style you decided to follow when chosing a variable name and always be consistent with it. The below program might produce strange outputs, but it's not strange at all. The variables are not the same:</p>
+                <code>
+                    ... <br>
+                    var age = 10<br>
+                    var Age = 40<br>
+                    alert(age);<br>
+                    alert(Age);<br>
+                    ... <br>
+                </code>
+                <p>You might've noticed my use of semi-colon but we might or might not discuss this in the future</p>
 
+            </fieldset>
+            <p>Before we talk about the data types in JavaScript, let's learn about naming convention when picking your variable name:</p>
+            <container>
+                <dl>
+                    <dt>Camel Case</dt>
+                    <dd>
+                        <p>This style is the only recommended style for JavaScript programmers. We (JavaScript programmers) use camel case when naming our variable. The camel case is a very simple to understand style. If it's a word, just use it like this:</p>
+                        <code>hello</code>
+                        <p>If it's two words, write them together, but with the second word beginning with capital letter to indicate the start of another word:</p>
+                        <code>helloJohn</code>
+                        <p>A real programmer reading this would quickly understand that you actually wrote two words "Hello" and "John" and not one word "helloJohn". It's up to you to decide if you like this approach or not. FYI: Almost all JavaScript devs use this style of naming convention when naming their variables.</p>
+                        <p>Watch carefully the last example of camel case below:</p>
+                        <code>welcomeToTheWorldOfJavaScript</code>
+                        <p>FYI: The name "camelCase" comes from the look of your variable name once you used this style. It looks like a camel 🐫</p>
+                    </dd>
+                    <dt>Snake Case</dt>
+                    <dd>
+                        <p>Snake Case is used by people using other languages like python e.tc. This is the de-facto of all python devs. To use a Snake case as your naming convention, join your words with underscore if it's longer than 1. </p>
+                        <p>Example (1 word):</p>
+                        <code>hello</code>
+                        <p>Example (2 words):</p>
+                        <code>hello_user</code>
+                        <p>Example (6 words):</p>
+                        <code>welcome_to_the_world_of_javascript</code>
+                        <p>The snake case is quite easy to understand and if you've noticed, all the words i used are lowercased. This is just a matter of preference. But note that, most snake_case variable names are lowercased in the programming realm. (Most people that use snake_case used lowercased letters for their variable name).</p>
+                        <p>This style is known as snake_case because it obviously looks like a snake. Don't beleive it? Remember how snake look like in games like <b>Snake Xenxia</b>.</p>
+                    </dd>
+                </dl>
+            </container>
+            <p>There are other naming convention but those two discussed above are the most important.</p>
+            <p>Now that we've knew how to name our variable, let's talk about the different between let, var and const</p>
+            <h3>Var</h3>
+            <p>Var is the oldest way to declare your variable. But note that, it has alot of limitation compared to let. Var is used to declare variables that can be reassigned a value. For example, let's say i declared a variable named "age" with the value of 120, i can reassign it with the value of 121 and it'll still be a valid code. Check out the code below:</p>
+            <code>
+                ...<br>
+                var age = 120 //the first value <br>
+                age = 121 //same variable but with a different value <br>
+                console.log(121);<br>
+                ...<br>
+            </code>
+            <p>The only limitation with this was that it's not block scoped. Block are what we used to group a code. (We call them "Block of codes" because they're grouped with blocks). Take a look at the below code, you might expect the output to be "John" but the ouput is "Joseph":</p>
+            <code>
+                ...<br>
+                var name = "John"
+                <br>
+                <br>
+                {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;var name = "Joseph"<br>
+                }<br>
+                <br>
+                console.log(name);<br>
+                ...<br>
+
+            </code>
+            <p>However, variables declared using the var keyword are function scoped. The value are not leaking if they're enclosed in ( and ). Var also has something called Hoisting. Just search it on google if you're interested but generally i 100% recommend using <b>let</b> over <b>var</b>. Take a look at the below code, it fixes our earlier problem:</p>
+            <code>
+                ... <br>
+                let name = "John";
+                <br><br>
+                (function(){<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;let name = "Joseph"<br>
+                })()<br>
+                <br>
+                console.log(name);<br>
+                ... <br>
+            </code>
+            <p>You'll notice that the <b><i>let name = "Joseph"</i></b> is enclosed in brackets ' ( ' and ' ) ' </p>
+            <h3>Let</h3>
+            <p>Using let and var are literally the same. They're both used to declare variables whose value can be reassigned except 'let' fix the hoisting problem with var and it's also block scoped which is so great for programmers alike. It also uses less memory then var and it reduce encountering some weird bugs that can't be prevented if you're using var. </p>
+            <fieldset>
+                <legend>Note</legend>
+                <p>Bug is a way programmers used to refer to error in programs. The name actually came from a real bug that causes a malfunction in a computer. Ever since then, programmers adopt to calling errors in programs "A Bug".</p>
+            </fieldset>
+            <h3>Const</h3>
+
+        </section>
     </main>
-    <footer>
-        
-    </footer>
+    <script src="script/script.js"></script>
+    <script src="./../js/copy.js"></script>
+    <script src="./../js/days_nav.js"></script>
 </body>
 </html>

@@ -1,1 +1,10 @@
-@import url("./../css/style.css");
+@import url("./../../css/style.css");
+
+container {
+    border: 2px solid black;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 98%;
+    margin: auto;
+}
