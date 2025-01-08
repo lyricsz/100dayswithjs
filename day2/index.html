@@ -197,7 +197,119 @@
                 <legend>Note</legend>
                 <p>Bug is a way programmers used to refer to error in programs. The name actually came from a real bug that causes a malfunction in a computer. Ever since then, programmers adopt to calling errors in programs "A Bug".</p>
             </fieldset>
+            <p>To use a let, just follow the below syntax: </p>
+            <code>
+                let variable_name = value 
+            </code>
+            <p>So, suppose we want to create a variable named "name" with a value of "John Doe". We create the variable as below: </p>
+            <code>
+                ... <br>
+                var name = "John Doe"<br>
+                console.log(name);<br>
+                ... <br>
+            </code>
+            <p>Let's see if our problem from earlier (using var) is fixed (with using let): </p>
+            <code>
+                ...<br>
+                let name = "John"
+                <br>
+                <br>
+                {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;let name = "Joseph"<br>
+                }<br>
+                <br>
+                console.log(name);<br>
+                ...<br>
+            </code>
+            <p>And our output is now "John" and not "Joseph". I know all of this is weird, but knowing this matters alot. As we'll learn more in the future on "Global Variables" and "Local Variables". But knowing the difference between 'var' and 'let' is the key to understanding them. </p>
             <h3>Const</h3>
+            <p>Constants variables are variables we do not want to change their value once we've assigned a value to them. In other words, they're constants.</p>
+            <p>Constants actually works the same like "let", but with just an exception that once you assign it a value you can't change the value throughout your program. </p>
+            <p>"const" are especially important if we don't want to change our variable value throughout our entire program. Constants also uses the least memory of computer. Let's look at an example:
+            </p>
+            <code>
+                ...<br>
+                const name = "John";
+                <br>
+                <br>
+                {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;const name = "Joseph"<br>
+                }<br>
+                <br>
+                console.log(name);<br>
+                ...<br>
+            </code>
+            <p>This works so well like 'let' but with the least memory being used. Since once you gave it a value, you can't change it... JavaScript allocate a fixed memory compared to 'var' or 'let'</p>
+            <p>You'll encounter an error if you try to run the below code (notice how i tried to gave it a new value):</p>
+            <code>
+                ...<br>
+                const name = "John";<br>
+                name = "Joseph";
+                <br>
+                <br>
+                console.log(name);<br>
+                ...<br>
+            </code>
+            <p>And that marks the end of the whole "let" vs "var" vs "const". </p>
+            <fieldset>
+                <legend>Note</legend>
+                <p>I personally recommend using 'const' or 'let' and always avoid using 'var'. 'var' was oldest with alot of bugs (e.g hoisting) and 'let' was introduce in later version of JavaScript to fix the bugs. </p>
+                <p>Also, when naming your variable, avoid giving it a space. (Don't forget, we JavaScript programmers use camelCase)</p>
+            </fieldset>
+            <p>Now, this part of the tutorial will have a part 2, explaining some type of value we have. Since these values are just data, we use the term "Data types" for their types. </p>
+            <p>Let's move on to today's project (Day 2 project): </p>
+            <code>
+                ...<br>
+                const name = "John";<br>
+                const age = 20<br>
+                const color = "Black"<br>
+                const religion = "Jainism"<br>
+                <br>
+                <br>
+                alert("My name is " + name);<br>
+                alert("I am " + age + " years old");<br>
+                alert("I am " + color + " in complexion");<br>
+                alert("My religion is " + religion);<br>
+                ...<br>
+            </code>
+            <p>Now, if we want another completely different output, all we have to do was change the value of the variable we want to change. </p>
+            <p>Take a look at the code very well, you'll notice semi-colons. They just mark the end of a statement. (Statements in programming language is just like that of English sentence. We use colon for that of English language, but in JavaScript, we use semi-colon)</p>
+            <p>Also, what's with the " + " sign? We use this to include the variable value in our output. Go ahead and change the alert to something else, like console.log method, or document.write method...</p>
+            <p>I might discuss concetenation in the future but knowing what it means now might be extremely helpful.</p>
+            <p>Congratulations! You made it to the end of day 2 lesson. (lesson 1 in general) </p>
+        </section>
+        <section id="task">
+            <h2>Task</h2>
+            <p>Go ahead and use the following parameters for the variable in the our project. </p>
+            <ol>
+                <li>name = //any name</li>
+                <li>age = //any age</li>
+                <li>color = //any color</li>
+                <li>religion = //any religion</li>
+            </ol>
+            <p>The full project code is shown below:</p>
+            <code>
+                &lt;!DOCTYPE html&gt;<br>
+                &lt;html&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;<br> 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;My Second Project &lt;/title&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const name = "John";<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const age = 20<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const color = "Black"<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const religion = "Jainism"<br>
+                <br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("My name is " + name);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("I am " + age + " years old");<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("I am " + color + " in complexion");<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("My religion is " + religion);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;<br>
+                &lt;/html&gt;<br>
+            </code>
 
         </section>
     </main>
