@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Variables - 100 Days with JS - Day 2</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -18,43 +18,242 @@
             </ul>
         </nav>
         <aside>
-            <select name="0" id="select">
+            <select name="2" id="select">
 
             </select>
         </aside>
     </header>
     <main>
-        <aside>
-            <nav>
-                <ol>
-                    <li><a href="#introduction">Introduction</a></li>
-                    <li><a href="#tutorial">Tutorial</a></li>
-                    <li><a href="#task">Task</a></li>
-                </ol>
-            </nav>
-        </aside>
-    </main>
-    <footer>
+        <nav>
+            <ol>
+                <li>Introduction</li>
+                <li>Tutorial</li>
+                <li>Task</li>
+            </ol>
+        </nav>
+        <section id="introduction">
+            <h2>Introduction</h2>
+           <p>Hello Folks! And welcome to the day 3 of this a-100-days journey. In this lesson, we're going to be learning about Data types in JavaScript. Think about them as the type of value we gave our variables. Now, let the fun begin!</p>
+        </section>
+        <section id="tutorial">
+            <h2>Tutorial</h2>
+            <p>Data types are so essential in understanding programming languages. You'll come acrosss it in almost any program you wrote. </p>
+            <p>Data types are the type of value stored in a data. There are predefined operations such as function and properties that comes with each types, and there are also do's and don't that comes with each data types.</p>
+            <p>JavaScript has the following data types:</p>
+            <ol>
+                <li>Number</li>
+                <li>String</li>
+                <li>Boolean</li>
+                <li>Array</li>
+                <li>Obects</li>
+                <li>Function</li>
+                <li>Undefined</li>
+            </ol>
+            <p>Before we learn these data types, let's first understand some important thing about them.</p>
+            <ol>
+                <li>There are limits to the value some data types can store. E.G Numbers can only store some certain number, but have issues with storing large numbers or very small numbers. </li>
+                <li>You can convert a data from type a to type b if such conversion is syntactically, and semantically correct. E.G You can always convert a number to a string but not vice versa. This is known as "<b>Type Conversion</b>" in programming languages.</li>
+                <li>You cannot use some operations that are invalid on some certain types. E.g You can use the addition operator on two string but not the division operator. (More on operators in the future)</li>
+                <li>You can always check the type of a data by using the 'type checker function' provided in the programming language you are using. In JavaScript, we use the 'typeof function' to know the type of our data. Almost every programming language has this.</li>
+            </ol>
+            <h3>Numbers</h3>
+            <p>Numbers data type obviously are numbers. These data type is just number. You can have any number stored in your variable. The way we stored a number is by just typing-in the number without adding any quotes. By doing this, our variable now has the data type of a number which gives us access to alot of methods, properties, and even some operations on the data. </p>
+            <p>E.g Let's say i want to store my age in a variable, it would be unwise to use any data type apart from number... Since my age is a number. (Don't forget always use the right data type) I'll declare it like this: </p>
+            <code>
+                ... <br>
+                const myAge = 24;<br>
+
+                alert(myAge); <br>
+                ... <br>
+            </code>
+            <p>Now, i know we all might be wondering 'Why not just put quotes to 24 making it "24" '? Actually, that will turn our data from number into a sting and whatever operations comes built-in to numbers we cannot use it anymore, we'll have to stick with that of a string. (More on string in later sub-headings)</p>
+            <p>So, now that we've learned about how we can declare our variable with a number data type, let's check it out if it's actually a number or not using the typeof keyword. This check the type of our variable and return it's type. Some built-in function return a value while some don't. You can also create your custom function (More on those in the future)</p>
+            <code>
+                ... <br>
+                const myAge = 24;<br>
+
+                alert(typeof myAge); <br>
+                ... <br>
+            </code>
+            <p>Alright, what was the result? Number? Or other data type listed above?</p>
+            <p>There's alot you can do with numbers. These include but not limited to:</p>
+            <ol>
+                <li>Performing math operations. E.g 2 * 2 or 2 + 2 (* is used to indicate multiplication in JavaScript)</li>
+                <li>Using relational operators with it. (Note: We'll talk about Relational operators in the future). E.g 2 > 3 </li>
+                <li>Conversion to string or boolean. You can easily convert a number to string or boolean. </li>
+            </ol>
+            <p>And lot more that we'll see in the upcoming lessons</p>
+
+            <h3>String</h3>
+
+            <p>A String might sound quite new to you if you're just starting out in programming. Yet, a String only means Text. Now, you can call anything text. But you'll still have to be careful with a few things. </p>
+            <p>To make our data a string, we'll just have to sorround it with quotes. You can use both single quotes or double quotes, all are welcomed. But pick one and stick to it.  We programmers call it "STYLE". So, go ahead and choose your style. </p>
+            <code>
+                ... <br>
+                const language = "JavaScript"; <br>
+                const greetings = "Greetings from the realm of " + language;<br>
+
+                alert(greetings); <br>
+                ... <br>
+            </code>
+            <p>Now, i know we might be suprise adding a string with a string doesn't give us an error. The addition of one string with another sting results in a new string with the addition of both. This is known as string concatenation. (String concatenation is the process of joining two or more strings together to produce a new string). </p>
+            <p>To further explain this, let's look at below example:</p>
+            <code>
+                ... <br>
+                const stringA = "I am the first string"; <br>
+                const stringB = "I am the second string"; <br>
+                const stringC = stringA + " " + stringB; <br>
+
+                alert(stringC); <br>
+                ... <br>
+            </code>
+            <p>I hope that explain things better. A quick question, "How many strings do we join together in the above example?". Be careful, you might thought it was 2 at first, but the answer is 3. We also add a space to the middle. Space is enclosed in quotes which makes it a string. </p>
+            <p>A very quick fun task is to go back to day 2 project, check the output, How many strings are concatenated in each output? </p>
+            <p>Now, let's talk about escape characters. We've already learn how to use strings in our project. But what if we want to include a quote in our string? The below code will give us error when executed: </p>
+            <code>
+                ... <br>
+                const language = "JavaScript"; <br>
+                const greetings = "Greetings from the realm of " " + language + " " ";<br>
+
+                alert(greetings); <br>
+                ... <br>
+            </code>
+            <p>I expect an error in the program. But we have a good intention, we want to enclose our language in quotes. </p>
+            <fieldset>
+                <legend>???</legend>
+                <p>You might be wondering why we encounter an error. Take a look at the code, you'll notice we actually include the same quote we use to declare string to our string which confuses the interper (the web browser) by telling it we've ended our string before we actually end it. </p>
+            </fieldset>
+            <p>A quick fix to this is to use single quote instead of double quotes. </p>
+            <code>
+                ... <br>
+                const language = "JavaScript"; <br>
+                const greetings = "Greetings from the realm of ' " + language + " ' ";<br>
+    
+                alert(greetings); <br>
+                ... <br>
+            </code>
+            <p>But we don't want a single quote, we want to use double quote. To fix this, we use the escape characters. We have quite a few of them. Some examples are shown below: </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">Escape characters and their uses</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>\' </th>
+                        <td>Used to include a single quote in our string while avoiding any conflict </td>
+                    </tr>
+                    <tr>
+                        <th>\"</th>
+                        <td>Used to include a double quote in our string while avoiding conflicts</td>
+                    </tr>
+                    <tr>
+                        <th>\t</th>
+                        <td>Used to include a tab to our string. Mostly used with the console.log method</td>
+                    </tr>
+                    <tr>
+                        <th>\n</th>
+                        <td>Indicates a new line. Mostly used with the console.log method</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>The list is exhaustive as almost anything can be escaped. Now to fix our earlier problem, let's use the escape character \" to include a double quote in our string. </p>
+            <code>
+                ... <br>
+                const language = "JavaScript"; <br>
+                const greetings = "Greetings from the realm of \" " + language + " \" ";<br>
         
-    </footer>
-    <script>
-        const select = document.getElementById("select");
-        select.onchange = (e) => {
-            setTimeout(() => {
-                window.location = "./../" + select.value;
-            })
-        }
-        for(i = 0; i < 100; i++){
-            const option = document.createElement('option');
-            option.value = "day" + (i + 1);
-            if(i == select.name){
-                option.selected = true;
-                option.disabled = true;
-            }
-            option.textContent = "Day " + (i + 1);
-            option.style.color = "gray"
-            select.appendChild(option);
-        }
-    </script>
+                alert(greetings); <br>
+                ... <br>
+            </code>
+            <p>And Voila, the bug's been fixed. Now, before we finish this sub-section, let's quickly talk about a useful properties of strings... Length</p>
+            <p>To figure out the length of any string, just access it's lenth properties.</p>
+            <p>To access the length property of any string, just use this syntax:</p>
+            <code>
+                String.length 
+            </code>
+            <p>Let's take a look at a quick example: </p>
+            <code>
+                ... <br>
+                const name = "John Doe"; <br>
+
+                const nameLenght = name.length; <br>
+
+                alert("Your name is " + name); <br>
+                alert("The length of your name is " + nameLenght);<br>
+                ... <br>
+            </code>
+            <p>Now, i know what you might think. The length is actually 7, not 8... In reality, even a space is a text (or characters)... Now, recount with a space and you'll get an eight.</p>
+            <h3>Boolean</h3>
+            <p>Boolean (also known as logic) is named after the legendary George Boole. The boolean value is so easy to understand. It can only have two value, "true" or "false" (Note, do not put any quote to it so as not to confuse the interpreter that it's a string). </p>
+            <p>In other words, it can either be this: </p>
+            <code>
+                ... <br>
+                const bool = true; <br>     
+                alert(bool);<br>
+                ... <br>
+            </code>
+            <p>Or this: </p>
+            <code>
+                ... <br>
+                const bool = false; <br>
+                alert(bool);<br>
+                ... <br>
+            </code>
+            <p>Boolean are so important, as we'll see later on in Relational operators. Some other functions also return true or false in JavaScript. To change the value of a boolean, we can negate it using the Not logical operator, or we redeclare it.</p>
+            <p>The first example (Using the not operator -- !): </p>
+            <code>
+                ... <br>
+                let bool = false; <br>
+                bool = !bool; <br>
+                <br>
+                alert(bool);<br>
+                ... <br>
+            </code>
+            <p>The Not operator changes the value to the opposite. In other words, it changes truth to false and false to true. </p>
+            <p>The second example: </p>
+            <code>
+                ... <br>
+                let bool = false; <br>
+                bool = true; <br>
+
+                alert(bool); <br>
+                ... <br>
+            </code>
+            <p>Boolean are so important in your programs, you might want to do something if something is true or do other thing if it's false. </p>
+            <p>As we close this sub-section, don't forget that booleans can only store two values, True or False.</p>
+            <p>I'm so sorry guys, we'll be discussing about the remaining four in the next lesson. I don't plan for that, but it has reasons. So, more on data types tomorrow, folks. </p>
+        </section>
+        <section id="task">
+            <h2>Task</h2>
+            <p>Welcome to the most amazing task. We'll build a character counter. It accepts input... converts the input to text and checks out it's length and then gives out the length as the result. </p>
+            <p>We're not going to convert the input to text, because we're going to use the prompt function which automatically returns a string. </p>
+            <p>The prompt method of the window send a prompt to the user, this allow the user to input anything ranging from text to numbers, e.t.c. It send a return value. We can actually use that return value in a variable. </p>
+            <p>I know this might sound a little bit complex but it's not. The function does what it does, but it returns a value to us. This value is actually what the user types. </p>
+            <p>A brief example is this: </p>
+            <code>
+                ... <br>
+                const age = prompt(); <br>
+                alert("Your age is " + age);<br>
+                ... <br>
+            </code>
+            <p>If you want to sent some hint, or message to the user so they can know what to input, just put your message (your message must be a string) as an argument to the prompt function. </p>
+            <code>
+                ... <br>
+                const age = prompt("What is your age?"); <br>
+                alert("Your age is " + age);<br>
+                ... <br>
+            </code>
+            <p>Now, we'll build a text character counter project. It send a prompt to the user asking them to enter some text (interpret this however you want) and then figures out the lenght of the string by using the length property of a string. </p>
+            <p>if you're stuck, you can message me directly and we'll do it together. (Not really) </p>
+            <p>Goodluck! (More on prompt method in the future)</p>
+
+        </section>
+
+    </main>
+    <script src="script/script.js"></script>
+    <script src="./../js/copy.js"></script>
+    <script src="./../js/days_nav.js"></script>
 </body>
 </html>

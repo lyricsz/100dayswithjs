@@ -80,3 +80,20 @@ dt {
     border-bottom: 2px solid red;
     display: inline-block;
 }
+
+table {
+    width: 90%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+table th {
+    font-size: x-large;
+    border: 1px solid red;
+    width: 50%;
+}
+
+table td {
+    border: 1px solid black;
+}
