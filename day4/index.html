@@ -3,17 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Data Types P. 2 - 100 Days with JS - Day 2</title>
+    <link rel="stylesheet" href="./../css/style.css">
 </head>
 <body>
     <header>
+        <h1>100 Days With JavaScript</h1>
+        <nav>
+            <ul>
+                <li><a href="./">Home</a></li>
+                <li><a href="./days">JS 100</a></li>
+                <li><a href="./about">About</a></li>
+                <li><a href="./contact">Contact</a></li>
+            </ul>
+        </nav>
+        <aside>
+            <select name="2" id="select">
 
+            </select>
+        </aside>
     </header>
     <main>
+        <nav>
+            <ol>
+                <li>Introduction</li>
+                <li>Tutorial</li>
+                <li>Task</li>
+            </ol>
+        </nav>
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>Hello Folks. Welcome to day 4. And today, we're going to kick-off from where we stopped the yester day. We'll learn about "Array", "Object", "Function" and "Undefined" data types. We'll round our lesson up with "Type Conversion".</p>
+        </section>
+        <section id="tutorial">
+            <h2>Tutorial</h2>
+           <p>We've learnt about data types in the preceding lesson. And we've seen some data types in action. These include "Number", "String" and "Boolean". We'll continue by learning other data types that exist in the JS (JS is abbr for JavaScript). </p>
+           <h3>Array</h3>
+           <p>Array is a very special data type. As it alone is not entirely new data type. Array allows you to store 1 or more data contagiously. From left to right, these data are stored. </p>
+           <p>The data or value in an Array is called Element. If they're two or more, they're called "Elements" or "Array Elements". </p>
+           <p>Array is so useful in real world projects. Since you can store more than 1 data, it's extremely useful if you have alot of data to stored. It keeps things organized. </p>
+           <p>Elements in an array can be sorted, or arranged in descending order or ascending order. There are other helpful operations you can perform in an Array.</p>
+           <p>Array provide alot of helpful functions and properties (Functions also mean Methods). We'll learn about the "Push" and the "Pop" in this tutorial. We'll learn about others in future lessons. </p>
+           <p>First, how can we assign an array to a variable? Simple. Just put all your data/datas inside the square bracket "[" and "]". To seperate element in an array, use "," (Comma) to sepeare them. Let's take a look at an example, suppose i want to store the name of my favorite Chinese drama and i want to use an array to store them, i'll store each element as string and seperate them using comma (,). </p>
+           <fieldset>
+            <legend>Note</legend>
+            <p>Elements in an array can also be called "Array Elements" but sometimes we prefer using "Items". So, Items stored in an array also mean Elements stored in an array.</p>
+           </fieldset>
+           <code>
+            ... <br>
+            const myFavoriteCDrama = ["Till The End Of The Moon", "Burning Flames", "Destiny", "Eternal Love"];
+            <br>
+            <br>
+            console.log(myFavoriteCDrama);<br>
+            ... <br>
+           </code>
+           <p>Let's learn about accessing each element in an array. But keep note that JavaScript allows the mixing of data types in an Array. In some programming languages, every element in your Array must be of the same type. If you start with a string, all items must also be a String. This is not the case with JavaScript. They can be of the same type, or not. This is sometimes helpful and sometimes not. </p>
+           <p>To access elements in an array we use what we call index. Every element in our array have a particular index. The indexing in an array starts from 0 (Countings mostly start from Zero in most programming languages --- If you're new to this, do not worry, you'll soon get used to it). So, in our previous example, let's say we want to access the first element, we access it by going into our array, and accessing the index of 0. Like this: </p>
+           <code>
+            ... <br>
+            const array = [0, 1, 2, 3,  4, 5, 6, 7, 8, 9];<br>
+            const firstElement = array[0];<br>
+            alert(firstElement);<br>
+            ...<br>
+           </code>
+           <p>This code -- <i> array[0] </i> -- access the first element in our array. Kindly go ahead and change the index to 1, or 3, or any number. Spoilers alert: What happens if we try accessing element that is not in our array? E.g In our above example, try accessing the 20th element -- It doesn't exist. </p>
+           <p>Before we move on, let's learn about adding elements to our array after we declared it. We can use pop method or push method, but we can also add element to an array by indexing. We can also change an element by indexing too. In our preceding example, let's say we want to access the 19th element , but it doesn't exist. We can declare it by going inside the 19th element (by indexing) and assigning (giving) it with a value: </p>
+           <code>
+            ... <br>
+            const array = [0, 1, 2, 3,  4, 5, 6, 7, 8, 9];<br>
+            array[0] = "I'm Learning Arrays";<br>
+            array[19] = 19;<br>
+            
+            const firstElement = array[0];<br>
+            const lastElement = array[19];<br>
+            const secondToLastElement = array[18];<br>
+
+            alert(firstElement);<br>
+            alert(lastElement); <br>
+            alert(secondToLastElement); <br>
+            ...<br>
+           </code>
+           <p>You'll notice how we gave an element a value. We first access the Array element (...array[index]...), then we set it equal to (=) a new value. E.g array[0] = "I'm Learning Arrays". </p>
+           <p>If you add an element to an index greater then the current max index of an Array, JavaScript fills in other element with the value "Undefined". In our example, this is shown in this line: <i>const secondToLastElement = array[18];</i>. Same with 17-11. Our array variable has only 10 element to begin with, but since we've expand it to 20 elements, JavaScript fills the in-between with "Undefined". Hopefully that makes more sense. 
+           </p>
+           <p>Before we learn about push and pop method of Array, let's learn about getting the length of an Array. </p>
+           <p>To get a length of an Array means to get the number of elements/items in that array. This is done by accessing the length property. This is actually how we also access the length of a string. </p>
+           <code>
+            ... <br>
+            const myFavoriteCDrama = ["Till The End Of The Moon", "Burning Flames", "Destiny", "Eternal Love"];
+            <br>
+            <br>
+            console.log(myFavoriteCDrama.length);<br>
+            ... <br>
+           </code>
+           <p>There are 4 elements in our array (myFavoriteCDrama). Hence, the code <i><b>myFavoriteCDrama.length</b></i> returns 4 (the length of our array). We can use the return value in our project directly or store it in a variable.</p>
+           <p>The length property is now useful for essentially one thing (it's useful for more than one thing, though), suppose there's this array with elements and you don't want to figure out the length of that array by counting it's element, to access it's last element we don't need to count each item in the array anymore. We can just do this: </p>
+           <code>
+            ... <br>
+            const myFavoriteCDrama = ["Till The End Of The Moon", "Burning Flames", "Destiny", "Eternal Love"];
+            <br>
+            <br>
+            console.log("Last item: " + myFavoriteCDrama[myFavoriteCDrama.length - 1]);<br>
+            ... <br>
+           </code>
+           <p>Above program was written so poorly, but it's just for learning purpose. You might've noticed we subtract 1 from our length. This is because Array indexing starts from Zero, but length property gave us the length. If we want both to match, we subtract the length by 1. </p>
+           <p>Before we roundoff this section, let's learn about "Pop" and "Push" method of the Array. </p>
+           <p>The Pop method removes the last element of an array and return it to us. If we like, we might use it in our project or we can discard the return value completely. Let's take a look at both example in action: </p>
+           <code>
+            ... <br>
+            const myFavoriteCDrama = ["Till The End Of The Moon", "Burning Flames", "Destiny", "Eternal Love"];
+            <br>
+            <br>
+            myFavoriteCDrama.pop();<br>
+            console.log(myFavoriteCDrama);<br>
+            ... <br>
+           </code>
+           <p>Or</p>
+           <code>
+            ... <br>
+            const myFavoriteCDrama = ["Till The End Of The Moon", "Burning Flames", "Destiny", "Eternal Love"];
+            <br>
+            <br>
+            const lastItem = myFavoriteCDrama.pop();<br>
+            console.log("The last drama from the list is " + lastItem);<br>
+            ... <br>
+           </code>
+           <p>Easy as pie. Popping element from an Array completely remove the last element from an array. If our Array starts with  3 element namely "John" , "Love", "Cats". If we use the pop method, we remove the last item which is "Cats". Our array now consist of 2 element "John", "Love". If we use the pop method again, we're left with only one element "John". If we pop the last element again , we're left with ... NOTHING. (Try out this example, folks)</p>
+           <p>The push method is like the opposite of pop, instead of removing the last item in our array, we're appending a neew element to our array. Pushing an element to our array expand the length of our array by 1. In our CDrama example, let's say there's this new drama titled "Moonlight Mystique" and we want to add it to our CDrama list, we do so by pushing the string "Moonlight Mystique" to our array: </p>
+           <code>
+            ... <br>
+            const myFavoriteCDrama = ["Till The End Of The Moon", "Burning Flames", "Destiny", "Eternal Love"];
+            <br>
+            <br>
+            myFavoriteCDrama.push("Moonlight Mystique");
+            console.log(myFavoriteCDrama);<br>
+            ... <br>
+           </code>
+           <p>The push method takes in one argument (The value we want to push in). </p>
+           <p>You might've noticed that there are other ways to add items to our array than push. Well, Welcome to the programming world, where different approaches sometimes gets you the same result. </p>
+           <p>Before we round things up, let's discuss a rather opposite to <b>Pop</b> and <b>Push</b>. These methods are "<i><b>Shift</b></i>" and "<i><b>Unshift</b></i>". Since "<b>Pop and Push</b>" remove/add element from the last item of our Array, <b>Shift and Unshift</b> works the same way, but this methods removes/adds element from the front (first item). The Shift works like the Push. And Unshift works like Pop. </p>
+           <p>For unshift: </p>
+           <code>
+            ... <br>
+            const myFavoriteCDrama = ["Till The End Of The Moon", "Burning Flames", "Destiny", "Eternal Love"];
+            <br>
+            <br>
+            const firstItem = myFavoriteCDrama.unshift();<br>
+            console.log("The first drama from the list is " + firstItem);<br>
+            ... <br>
+           </code>
+           <p>For shift:</p>
+           <code>
+            ... <br>
+            const myFavoriteCDrama = ["Till The End Of The Moon", "Burning Flames", "Destiny", "Eternal Love"];
+            <br>
+            <br>
+            myFavoriteCDrama.shift("Moonlight Mystique");
+            console.log(myFavoriteCDrama);<br>
+            ... <br>
+           </code>
+           <h3>Object</h3>
+           <p>Object allows to store more than 1 value , like Array. But instead of using indexing (like Array), Objects use key-value pair to store value. If you're familiar with CSS key-value pairs, this might be familiar with you. </p>
+           <p>To create an object we use the following syntax:</p>
+           <code>
+            const obj = {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;"key1": "value1",<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;"key2": "value2",<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;...<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;"keyN": "valueN"<br>
+            }<br>
+           </code>
+           <p>The value can be of any type. The value can even be another object. If the value is a function, we call it the object's method. We'll learn more about function in this lesson. </p>
+           <p>Let's say we have a set of student with age and department. We can use Objects here. </p>
+           <code>
+            ... <br>
+            const studentInfo = {
+                ""
+            }
+           </code>
+
+        </section>
+        <section id="task">
+            <h2>Task</h2>
+       
+
+        </section>
 
     </main>
-    <footer>
-        
-    </footer>
+    <script src="script/script.js"></script>
+    <script src="./../js/copy.js"></script>
+    <script src="./../js/days_nav.js"></script>
 </body>
 </html>
