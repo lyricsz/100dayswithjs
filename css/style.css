@@ -97,3 +97,8 @@ table th {
 table td {
     border: 1px solid black;
 }
+
+.red {
+    color: red;
+    font-variant: small-caps;
+}

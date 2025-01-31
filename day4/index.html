@@ -18,7 +18,7 @@
             </ul>
         </nav>
         <aside>
-            <select name="2" id="select">
+            <select name="3" id="select">
 
             </select>
         </aside>
@@ -177,16 +177,271 @@
            <p>Let's say we have a set of student with age and department. We can use Objects here. </p>
            <code>
             ... <br>
-            const studentInfo = {
-                ""
-            }
+            const studentInfo = {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;student1: {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;age: 21,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;department: "Mathematics"<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;student2: {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;age: 19,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;department: "Mathematics"<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;student3: {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;age: 22,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;department: "Physics"<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;student4: {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;age: 20,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;department: "Chemistry"<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            }  <br>
+            ... <br>
            </code>
-
+           <p>Note how individual value is also another object. This is because objects' key value can have any data type... This is also the same with Array. Array can has another array as it's items. </p>
+           <p>To access the value of a particular key in our Object, we followed the name of the object with a dot (.) followed by the key name. This is used to access it's properties. You can only access it's method if the value is a function and not a property. Please note that you'll use Objects alot in your future projects as it's the common paradigm... Nodes (which we'll look into in the future lessons) are also Objects, Classes are also Objects... Creating new nodes directly is also an object... API's are also objects... The list goes on... But you get the idea, Objects are everywhere.</p>
+           <p>Another common thing that you'll come across in writing and composing your program in the future is function. Which we'll look into in the future. </p>
+           <p>Let's try and print the first student name from our Object above: </p>
+           <code>
+            ... <br>
+            const studentInfo = {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;student1: {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;age: 21,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;department: "Mathematics"<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;student2: {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;age: 19,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;department: "Mathematics"<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;student3: {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;age: 22,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;department: "Physics"<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;student4: {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;age: 20,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;department: "Chemistry"<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            };  <br>
+            <br>
+            const student1Info = studentInfo.student1;<br>
+            <br>
+            console.log("Student 1 Age: " + student1Info.age);<br>
+            console.log("Student 1 Department: " + student1Info.department);<br> 
+            ... <br>
+           </code>
+           <p>Take a look at the code and ensure you understand why it behaves that way before proceeding. Try changing the code , so it prints out student 2 info... Then change it again to print out Studnet 3 info, and lastly student 4. You can also add a new key with a value of an array, instead of Object. Try accessing this fifth student info also. </p>
+           <p>Let's take a look at adding new key to our objects after the declaration. You guessed right. Just instead of accessing the value, we assign a value. If a value has already been given to the key, it gets overriden. Overriden as in, the value has been changed completely as if you never gave it the value. Changing the value of something, removes the orignal value and replace it with the new value (that's somehow general). </p>
+           <code>
+            ... <br>
+            const studentInfo = {<br>
+                <br>
+            };<br>
+            <br>
+            studentInfo.student1 = {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;age: 20, <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;department: "Computer Science",  <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;hobbies: [ <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;"reading", "hiking", "swimming", "drawing" <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;] <br>
+            };<br>
+            <br>
+            console.log(studentInfo);<br>
+            console.log(studentInfo.student1);<br>
+            ... <br>
+           </code>
+           <p>Check your console to confirm if the program works working perfectly! You might've noticed the semi-colon style... This is used to mark the end of our statement. (Note: Statetment meaning in programming langs is equivalent in meaning with that of English lang statement) </p>
+           <p>You might've heard of JSON before... JSON is abbr. for JavaScript Obect Notation. If you've understand Object, you've more or less understand a huge portion of JSON. We'll learn about and work with JSON in the future. But to not complicate things, let's move on to the next data type ---&gt; </p>
+           <h3>Function</h3>
+           <p>Functions are commonly used to avoid repitition of codes. This is because function is used to invoke a block of codes as many times as possible. </p>
+           <p>Function in short "do things". But to be exact with the definition, it's used to group a block of code aside from the other programs, so we can easily invoke (call) the function, and this just execute the code inside the block. Hence, our functions can be invoke as many time as possible. The code inside the block can be anything as long as its syntax is correct. </p>
+           <p>Don't forget the let is used for block-scoped variable. Remember the block is just a open curly bracket and a closed curly bracket:</p>
+           <code>
+            ... <br>
+            {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;let wow = "Whoa! I'm learing function"<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log(wow);<br>
+            }<br>
+            <br>
+            console.log(wow);<br>
+            ... <br>
+           </code>
+           <p>Hopefully that looks semantically similar. This exact block is where we'll put in our code. But we'll have to follow the syntax to create a function:</p>
+           <code>
+            ... <br>
+            function function-name() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;//your code goes in here <br>
+            }<br>
+            ... <br>
+           </code>
+           <p>Function is a keyword. Function name is a name that you give your function (just like we gave variable variable-name, we also gave a function function-name and they both follow the same set of rules). Your function name must be decriptive (must give a hint of what the function does). Imagine a function that prints "I love you" using console.log three times. We can't use the function name 3xMessage or Console3xMessage. </p>
+           <p>We can't start a variable name with a number (if you think you need a re-read on variables, kindly revisit chapter 2), same with a function name. Also, including the method in the function name just doesn't sounds quite right... We already knew we're printing the messages but how it's done exactly shouldn't be on the function name. </p>
+           <p>You can call the function PrintMessage, Message, Message3x, Message3xPrint, and so on. Picking a variable name is a matter of style and how descriptive it is. </p>
+           <p>Now, let's create a function that prints "I love you" to our console. </p>
+           <code>
+            ... <br>
+            function message() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log("I love you");<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log("I love you");<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log("I love you");<br>
+            }<br>
+            ... <br>
+           </code>
+           <p>We've created our function, but how can we invoke it (as in -- call). To call a function, you follow the function name with opening and closing bracket. The brackets are for passing a parameter to our function. You can also call this an argument. But it's more preferred to call the arguments passed into a function when calling it a parameter. </p>
+           <p>Think of a parameter passed into a function when calling it the same meaning of a parameter in statistics where you need to know few numbers or names or stuffs in order to make a complete sense/knowlegde. Parameters are needed by the function exactly the same way too. But whether the parameters are a must or not, it's up to you... the programmer to construct that type of program. </p>
+           <p>Let's call our above function. </p>
+           <code>
+            ... <br>
+            function message() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log("I love you");<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log("I love you");<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log("I love you");<br>
+            }<br>
+            <br>
+            message();<br>
+            ... <br>
+           </code>
+           <p>If you run the above code, it first create the function then calls the function. When the function was called, it executes all the stuffs you put inside it's block (The block once again starts with "{" and ends with "}"). As in this three lines of code are inside a block: </p>
+           <code>
+            ... <br>
+            function message() {<br>
+                <span class="red">&nbsp;&nbsp;&nbsp;&nbsp;console.log("I love you");</span><br>
+                <span class="red">&nbsp;&nbsp;&nbsp;&nbsp;console.log("I love you");</span><br>
+                <span class="red">&nbsp;&nbsp;&nbsp;&nbsp;console.log("I love you");</span><br>
+            }<br>
+            <br>
+            message();<br>
+            ... <br>
+           </code>
+           <p>Please note, the above code is not a program to run, it's just for explanation purpose. We'll come across this kind of code whenever there's something being explained. Take a look at the code in red. That's our block code. Go ahead and change it to something else and watched it executed once you call the function. (You always call the function by calling the function name with brackets and passed in parammeter if necessary). You can call a function as many times as you want. Let's call our function  (the function we've been using) three times: </p>
+           <code>
+            ... <br>
+            function message() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log("I love you");<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log("I love you");<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log("I love you");<br>
+            }<br>
+            <br>
+            message();<br>
+            message();<br>
+            message();<br>
+            ... <br>
+           </code>
+           <p>Now that we've understood what  a function is, let's learn about "<b>functions with arguments</b>". Alright... So a function that needs some kind of parameter (when constructing/creating your function it's an argument) is created slightly different than our above function. </p>
+           <code>
+            ... <br>
+            function function-name(...arguments){<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;//Your code goes here. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;//You might make use of the parameters or not. <br>
+            }<br>
+            ...<br>
+           </code>
+           <p>The <b>...arguments</b> is used to indicate that any number of arguments can be passed in by the parameters... If you need 8 parameters, your agument must be greater or equal to 8.... And some of these arguments should not be mandatory. </p>
+           <p>We're going to learn function by taking a look at a function we've already been using... Alert is a function that takes in a parameter.</p>
+           <code>
+            ...<br>
+            alert(//The parameter goes here);<br>
+            ...<br>
+           </code>
+           <p>We've been using functions with arguments quite a lot. Let's construct ours!</p>
+           <code>
+            ... <br>
+            function message(message) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log(message);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log(message);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log(message);<br>
+            }<br>
+            <br>
+            message("I love you");<br>
+            message("I love you");<br>
+            message("I love you");<br>
+            ... <br>
+           </code>
+           <p>Let's try to break things down a bit... </p>
+           <p>When we call the function, we passed in the needed parameter as a string... Note: We can also hint the user what to type by overriden the default type to a certain data type. </p>
+           <p>When we call the function, the parameter is converted to a variable called message in our function by default: </p>
+           <code>
+            ... <br>
+            function message(<span class="red">message</span>) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log(message);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log(message);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log(message);<br>
+            }<br>
+            <br>
+            message("I love you");<br>
+            message("I love you");<br>
+            message("I love you");<br>
+            ... <br>
+           </code>
+           <p>This variable only exist within the function as a local variable. If you want to use it in some other parts of the program, make it global but you might want to change that of our variable name to something different from "message" since it matches(the same) the function name. </p>
+           <p>After we've got the message as a variable, we then make use of it in our block code...</p>
+           <code>
+            ... <br>
+            function message(message) {<br>
+                <span class="red">&nbsp;&nbsp;&nbsp;&nbsp;console.log(message);</span><br>
+                <span class="red">&nbsp;&nbsp;&nbsp;&nbsp;console.log(message);</span><br>
+                <span class="red">&nbsp;&nbsp;&nbsp;&nbsp;console.log(message);</span><br>
+            }<br>
+            <br>
+            message("I love you");<br>
+            message("I love you");<br>
+            message("I love you");<br>
+            ... <br>
+           </code>
+           <p>How about hinting... and the default... The default is used by our argument if we got no parameter/parameters... To make use of that, just pass in the default directly in the arguments like this: </p>
+           <code>
+            ... <br>
+            function message(message="I love you"){<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log(message);<br>
+            }<br>
+            ...<br>
+           </code>
+           <p>If you're using code editors like VS Code, whenever you tried caling the function it tells you it's default value along with it's data type. The default value can be anything but the type should match the type of parameters that you want. In our case, we want a string... Any string... So a more appropiate and correct program will look like below:</p>
+           <code>
+            ... <br>
+            function message(message=" "){<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log(message);<br>
+            }<br>
+            ...<br>
+           </code>
+           <p>Message is default to a string... Recall that " " (Space) is also a string as long as it is in quote... Anything in quotes are strings. For explanation purpose we won't stick with latter. Now, let's try calling the function without passing in any parameters... </p>
+           <code>
+            ... <br>
+            function message(message="I love you") {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log(message);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log(message);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log(message);<br>
+            }<br>
+            <br>
+            message();<br>
+            message();<br>
+            message();<br>
+            ... <br>
+           </code>
+           <p>We'll learn alot about functions in the future. Some functions behaves as an Object. We have arrow functions to avoid something called binding which has to do with functions in another function. We'll learn all about this and lot more in future lessons.</p>
+           <p>Try overriden the default message ("I love you") with something else by passing in a parameter when you call the function.</p>
+           <h3>Undefined</h3>
+           <p>Undefined is when you want to have access to a variable you've not defined. Let's go back to our variable basics: </p>
+           <code>
+            ... <br>
+            var variable-name = value<br>
+            ... <br>
+           </code>
+           <p>Let's say you didn't give it a value when you create the variable, it defaults itself to "undefined". Undefined is pretty useful. You might want to use a variable in your programs and it starts behaving weirdly, kindly check if it's undefined or not.</p>
+           <code>
+            ... <br>
+            let name <br>
+            <br>
+            console.log(name);
+            <br><br>
+            name = "John";
+            <br><br>
+            console.log(name);<br>
+            ... <br>
+           </code>
+           <p>It's pretty wise to think of undefined as "not given a value yet". It has some other use case that we'll learn about in the future. </p>
         </section>
         <section id="task">
             <h2>Task</h2>
-       
-
+            <p>Welcome to day 4 task. Let's make use of</p>
         </section>
 
     </main>
