@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    <script type='text/javascript' src='//pl24106250.profitablecpmrate.com/b3/4b/16/b34b163f80dc94828ab604d9f70c4c33.js'></script>
     <script async="async" data-cfasync="false" src="//pl25735339.profitablecpmrate.com/3db1dbcc7396851dea3931b5223992ce/invoke.js"></script>
 <div id="container-3db1dbcc7396851dea3931b5223992ce"></div>
     <header>
@@ -63,18 +64,22 @@
             <p>E.g Let's say i want to store my age in a variable, it would be unwise to use any data type apart from number... Since my age is a number. (Don't forget always use the right data type) I'll declare it like this: </p>
             <code>
                 ... <br>
+                <div class="copy">
                 const myAge = 24;<br>
 
                 alert(myAge); <br>
+                </div>
                 ... <br>
             </code>
             <p>Now, i know we all might be wondering 'Why not just put quotes to 24 making it "24" '? Actually, that will turn our data from number into a sting and whatever operations comes built-in to numbers we cannot use it anymore, we'll have to stick with that of a string. (More on string in later sub-headings)</p>
             <p>So, now that we've learned about how we can declare our variable with a number data type, let's check it out if it's actually a number or not using the typeof keyword. This check the type of our variable and return it's type. Some built-in function return a value while some don't. You can also create your custom function (More on those in the future)</p>
             <code>
                 ... <br>
+                <div class="copy">
                 const myAge = 24;<br>
 
                 alert(typeof myAge); <br>
+                </div>
                 ... <br>
             </code>
             <p>Alright, what was the result? Number? Or other data type listed above?</p>
@@ -92,21 +97,25 @@
             <p>To make our data a string, we'll just have to sorround it with quotes. You can use both single quotes or double quotes, all are welcomed. But pick one and stick to it.  We programmers call it "STYLE". So, go ahead and choose your style. </p>
             <code>
                 ... <br>
+                <div class="copy">
                 const language = "JavaScript"; <br>
                 const greetings = "Greetings from the realm of " + language;<br>
 
                 alert(greetings); <br>
+                </div>
                 ... <br>
             </code>
             <p>Now, i know we might be suprise adding a string with a string doesn't give us an error. The addition of one string with another sting results in a new string with the addition of both. This is known as string concatenation. (String concatenation is the process of joining two or more strings together to produce a new string). </p>
             <p>To further explain this, let's look at below example:</p>
             <code>
                 ... <br>
+                <div class="copy">
                 const stringA = "I am the first string"; <br>
                 const stringB = "I am the second string"; <br>
                 const stringC = stringA + " " + stringB; <br>
 
                 alert(stringC); <br>
+                </div>
                 ... <br>
             </code>
             <p>I hope that explain things better. A quick question, "How many strings do we join together in the above example?". Be careful, you might thought it was 2 at first, but the answer is 3. We also add a space to the middle. Space is enclosed in quotes which makes it a string. </p>
@@ -114,10 +123,12 @@
             <p>Now, let's talk about escape characters. We've already learn how to use strings in our project. But what if we want to include a quote in our string? The below code will give us error when executed: </p>
             <code>
                 ... <br>
+                <div class="copy">
                 const language = "JavaScript"; <br>
                 const greetings = "Greetings from the realm of " " + language + " " ";<br>
 
                 alert(greetings); <br>
+                </div>
                 ... <br>
             </code>
             <p>I expect an error in the program. But we have a good intention, we want to enclose our language in quotes. </p>
@@ -128,10 +139,12 @@
             <p>A quick fix to this is to use single quote instead of double quotes. </p>
             <code>
                 ... <br>
+                <div class="copy">
                 const language = "JavaScript"; <br>
                 const greetings = "Greetings from the realm of ' " + language + " ' ";<br>
     
                 alert(greetings); <br>
+                </div>
                 ... <br>
             </code>
             <p>But we don't want a single quote, we want to use double quote. To fix this, we use the escape characters. We have quite a few of them. Some examples are shown below: </p>
@@ -163,27 +176,33 @@
             <p>The list is exhaustive as almost anything can be escaped. Now to fix our earlier problem, let's use the escape character \" to include a double quote in our string. </p>
             <code>
                 ... <br>
+                <div class="copy">
                 const language = "JavaScript"; <br>
                 const greetings = "Greetings from the realm of \" " + language + " \" ";<br>
         
                 alert(greetings); <br>
+                </div>
                 ... <br>
             </code>
             <p>And Voila, the bug's been fixed. Now, before we finish this sub-section, let's quickly talk about a useful properties of strings... Length</p>
             <p>To figure out the length of any string, just access it's lenth properties.</p>
             <p>To access the length property of any string, just use this syntax:</p>
             <code>
+                <div class="copy">
                 String.length 
+                </div>
             </code>
             <p>Let's take a look at a quick example: </p>
             <code>
                 ... <br>
+                <div class="copy">
                 const name = "John Doe"; <br>
 
                 const nameLenght = name.length; <br>
 
                 alert("Your name is " + name); <br>
                 alert("The length of your name is " + nameLenght);<br>
+                </div>
                 ... <br>
             </code>
             <p>Now, i know what you might think. The length is actually 7, not 8... In reality, even a space is a text (or characters)... Now, recount with a space and you'll get an eight.</p>
@@ -192,35 +211,43 @@
             <p>In other words, it can either be this: </p>
             <code>
                 ... <br>
+                <div class="copy">
                 const bool = true; <br>     
                 alert(bool);<br>
+                </div>
                 ... <br>
             </code>
             <p>Or this: </p>
             <code>
                 ... <br>
+                <div class="copy">
                 const bool = false; <br>
                 alert(bool);<br>
+                </div>
                 ... <br>
             </code>
             <p>Boolean are so important, as we'll see later on in Relational operators. Some other functions also return true or false in JavaScript. To change the value of a boolean, we can negate it using the Not logical operator, or we redeclare it.</p>
             <p>The first example (Using the not operator -- !): </p>
             <code>
                 ... <br>
+                <div class="copy">
                 let bool = false; <br>
                 bool = !bool; <br>
                 <br>
                 alert(bool);<br>
+                </div>
                 ... <br>
             </code>
             <p>The Not operator changes the value to the opposite. In other words, it changes truth to false and false to true. </p>
             <p>The second example: </p>
             <code>
                 ... <br>
+                <div class="copy">
                 let bool = false; <br>
                 bool = true; <br>
-
+                <br>
                 alert(bool); <br>
+                </div>
                 ... <br>
             </code>
             <p>Boolean are so important in your programs, you might want to do something if something is true or do other thing if it's false. </p>
@@ -236,15 +263,19 @@
             <p>A brief example is this: </p>
             <code>
                 ... <br>
+                <div class="copy">
                 const age = prompt(); <br>
                 alert("Your age is " + age);<br>
+                </div>
                 ... <br>
             </code>
             <p>If you want to sent some hint, or message to the user so they can know what to input, just put your message (your message must be a string) as an argument to the prompt function. </p>
             <code>
                 ... <br>
+                <div class="copy">
                 const age = prompt("What is your age?"); <br>
                 alert("Your age is " + age);<br>
+                </div>
                 ... <br>
             </code>
             <p>Now, we'll build a text character counter project. It send a prompt to the user asking them to enter some text (interpret this however you want) and then figures out the lenght of the string by using the length property of a string. </p>
@@ -254,8 +285,17 @@
         </section>
 
     </main>
-    <script async="async" data-cfasync="false" src="//pl25735339.profitablecpmrate.com/3db1dbcc7396851dea3931b5223992ce/invoke.js"></script>
-<div id="container-3db1dbcc7396851dea3931b5223992ce"></div>
+    <div id="message"></div>
+    <fieldset class="ad">
+        <legend>ADS</legend>
+        <iframe src="https://www.profitablecpmrate.com/irra5dti?key=3a73537c4f97d61429727a394fbbfa41"></iframe>    
+        <iframe src="https://www.profitablecpmrate.com/irra5dti?key=3a73537c4f97d61429727a394fbbfa41"></iframe>
+        <iframe src="https://www.profitablecpmrate.com/irra5dti?key=3a73537c4f97d61429727a394fbbfa41"></iframe>
+        <iframe src="https://www.profitablecpmrate.com/irra5dti?key=3a73537c4f97d61429727a394fbbfa41"></iframe>
+        <iframe src="https://www.profitablecpmrate.com/irra5dti?key=3a73537c4f97d61429727a394fbbfa41"></iframe>
+        <iframe src="https://www.profitablecpmrate.com/irra5dti?key=3a73537c4f97d61429727a394fbbfa41"></iframe>
+        <iframe src="https://www.profitablecpmrate.com/irra5dti?key=3a73537c4f97d61429727a394fbbfa41"></iframe>
+    </fieldset>
     <script src="script/script.js"></script>
     <script src="./../js/copy.js"></script>
     <script src="./../js/days_nav.js"></script>

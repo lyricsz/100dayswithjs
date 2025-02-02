@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./../css/style.css">
 </head>
 <body>
+    <script type='text/javascript' src='//pl24106250.profitablecpmrate.com/b3/4b/16/b34b163f80dc94828ab604d9f70c4c33.js'></script>
     <script async="async" data-cfasync="false" src="//pl25735339.profitablecpmrate.com/3db1dbcc7396851dea3931b5223992ce/invoke.js"></script>
 <div id="container-3db1dbcc7396851dea3931b5223992ce"></div>
     <header>
@@ -53,25 +54,30 @@
            </fieldset>
            <code>
             ... <br>
+            <div class="copy">
             const myFavoriteCDrama = ["Till The End Of The Moon", "Burning Flames", "Destiny", "Eternal Love"];
             <br>
             <br>
             console.log(myFavoriteCDrama);<br>
+            </div>
             ... <br>
            </code>
            <p>Let's learn about accessing each element in an array. But keep note that JavaScript allows the mixing of data types in an Array. In some programming languages, every element in your Array must be of the same type. If you start with a string, all items must also be a String. This is not the case with JavaScript. They can be of the same type, or not. This is sometimes helpful and sometimes not. </p>
            <p>To access elements in an array we use what we call index. Every element in our array have a particular index. The indexing in an array starts from 0 (Countings mostly start from Zero in most programming languages --- If you're new to this, do not worry, you'll soon get used to it). So, in our previous example, let's say we want to access the first element, we access it by going into our array, and accessing the index of 0. Like this: </p>
            <code>
-            ... <br>
+            ...<br>
+            <div class="copy">
             const array = [0, 1, 2, 3,  4, 5, 6, 7, 8, 9];<br>
             const firstElement = array[0];<br>
             alert(firstElement);<br>
+            </div>
             ...<br>
            </code>
            <p>This code -- <i> array[0] </i> -- access the first element in our array. Kindly go ahead and change the index to 1, or 3, or any number. Spoilers alert: What happens if we try accessing element that is not in our array? E.g In our above example, try accessing the 20th element -- It doesn't exist. </p>
            <p>Before we move on, let's learn about adding elements to our array after we declared it. We can use pop method or push method, but we can also add element to an array by indexing. We can also change an element by indexing too. In our preceding example, let's say we want to access the 19th element , but it doesn't exist. We can declare it by going inside the 19th element (by indexing) and assigning (giving) it with a value: </p>
            <code>
             ... <br>
+            <div class="copy">
             const array = [0, 1, 2, 3,  4, 5, 6, 7, 8, 9];<br>
             array[0] = "I'm Learning Arrays";<br>
             array[19] = 19;<br>
@@ -83,6 +89,7 @@
             alert(firstElement);<br>
             alert(lastElement); <br>
             alert(secondToLastElement); <br>
+            </div>
             ...<br>
            </code>
            <p>You'll notice how we gave an element a value. We first access the Array element (...array[index]...), then we set it equal to (=) a new value. E.g array[0] = "I'm Learning Arrays". </p>
@@ -92,20 +99,24 @@
            <p>To get a length of an Array means to get the number of elements/items in that array. This is done by accessing the length property. This is actually how we also access the length of a string. </p>
            <code>
             ... <br>
+            <div class="copy">
             const myFavoriteCDrama = ["Till The End Of The Moon", "Burning Flames", "Destiny", "Eternal Love"];
             <br>
             <br>
             console.log(myFavoriteCDrama.length);<br>
+            </div>
             ... <br>
            </code>
            <p>There are 4 elements in our array (myFavoriteCDrama). Hence, the code <i><b>myFavoriteCDrama.length</b></i> returns 4 (the length of our array). We can use the return value in our project directly or store it in a variable.</p>
            <p>The length property is now useful for essentially one thing (it's useful for more than one thing, though), suppose there's this array with elements and you don't want to figure out the length of that array by counting it's element, to access it's last element we don't need to count each item in the array anymore. We can just do this: </p>
            <code>
             ... <br>
+            <div class="copy">
             const myFavoriteCDrama = ["Till The End Of The Moon", "Burning Flames", "Destiny", "Eternal Love"];
             <br>
             <br>
             console.log("Last item: " + myFavoriteCDrama[myFavoriteCDrama.length - 1]);<br>
+            </div>
             ... <br>
            </code>
            <p>Above program was written so poorly, but it's just for learning purpose. You might've noticed we subtract 1 from our length. This is because Array indexing starts from Zero, but length property gave us the length. If we want both to match, we subtract the length by 1. </p>
@@ -113,32 +124,38 @@
            <p>The Pop method removes the last element of an array and return it to us. If we like, we might use it in our project or we can discard the return value completely. Let's take a look at both example in action: </p>
            <code>
             ... <br>
+            <div class="copy">
             const myFavoriteCDrama = ["Till The End Of The Moon", "Burning Flames", "Destiny", "Eternal Love"];
             <br>
             <br>
             myFavoriteCDrama.pop();<br>
             console.log(myFavoriteCDrama);<br>
+            </div>
             ... <br>
            </code>
            <p>Or</p>
            <code>
             ... <br>
+            <div class="copy">
             const myFavoriteCDrama = ["Till The End Of The Moon", "Burning Flames", "Destiny", "Eternal Love"];
             <br>
             <br>
             const lastItem = myFavoriteCDrama.pop();<br>
             console.log("The last drama from the list is " + lastItem);<br>
+            </div>
             ... <br>
            </code>
            <p>Easy as pie. Popping element from an Array completely remove the last element from an array. If our Array starts with  3 element namely "John" , "Love", "Cats". If we use the pop method, we remove the last item which is "Cats". Our array now consist of 2 element "John", "Love". If we use the pop method again, we're left with only one element "John". If we pop the last element again , we're left with ... NOTHING. (Try out this example, folks)</p>
            <p>The push method is like the opposite of pop, instead of removing the last item in our array, we're appending a neew element to our array. Pushing an element to our array expand the length of our array by 1. In our CDrama example, let's say there's this new drama titled "Moonlight Mystique" and we want to add it to our CDrama list, we do so by pushing the string "Moonlight Mystique" to our array: </p>
            <code>
             ... <br>
+            <div class="copy">
             const myFavoriteCDrama = ["Till The End Of The Moon", "Burning Flames", "Destiny", "Eternal Love"];
             <br>
             <br>
             myFavoriteCDrama.push("Moonlight Mystique");
             console.log(myFavoriteCDrama);<br>
+            </div>
             ... <br>
            </code>
            <p>The push method takes in one argument (The value we want to push in). </p>
@@ -147,38 +164,45 @@
            <p>For unshift: </p>
            <code>
             ... <br>
+            <div class="copy">
             const myFavoriteCDrama = ["Till The End Of The Moon", "Burning Flames", "Destiny", "Eternal Love"];
             <br>
             <br>
             const firstItem = myFavoriteCDrama.unshift();<br>
             console.log("The first drama from the list is " + firstItem);<br>
+            </div>
             ... <br>
            </code>
            <p>For shift:</p>
            <code>
             ... <br>
+            <div class="copy">
             const myFavoriteCDrama = ["Till The End Of The Moon", "Burning Flames", "Destiny", "Eternal Love"];
             <br>
             <br>
             myFavoriteCDrama.shift("Moonlight Mystique");
             console.log(myFavoriteCDrama);<br>
+            </div>
             ... <br>
            </code>
            <h3>Object</h3>
            <p>Object allows to store more than 1 value , like Array. But instead of using indexing (like Array), Objects use key-value pair to store value. If you're familiar with CSS key-value pairs, this might be familiar with you. </p>
            <p>To create an object we use the following syntax:</p>
            <code>
+            <div class="copy">
             const obj = {<br>
             &nbsp;&nbsp;&nbsp;&nbsp;"key1": "value1",<br>
             &nbsp;&nbsp;&nbsp;&nbsp;"key2": "value2",<br>
             &nbsp;&nbsp;&nbsp;&nbsp;...<br>
             &nbsp;&nbsp;&nbsp;&nbsp;"keyN": "valueN"<br>
             }<br>
+            </div>
            </code>
            <p>The value can be of any type. The value can even be another object. If the value is a function, we call it the object's method. We'll learn more about function in this lesson. </p>
            <p>Let's say we have a set of student with age and department. We can use Objects here. </p>
            <code>
             ... <br>
+            <div class="copy">
             const studentInfo = {<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;student1: {<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;age: 21,<br>
@@ -197,6 +221,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;department: "Chemistry"<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;}<br>
             }  <br>
+            </div>
             ... <br>
            </code>
            <p>Note how individual value is also another object. This is because objects' key value can have any data type... This is also the same with Array. Array can has another array as it's items. </p>
@@ -205,6 +230,7 @@
            <p>Let's try and print the first student name from our Object above: </p>
            <code>
             ... <br>
+            <div class="copy">
             const studentInfo = {<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;student1: {<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;age: 21,<br>
@@ -229,11 +255,13 @@
             console.log("Student 1 Age: " + student1Info.age);<br>
             console.log("Student 1 Department: " + student1Info.department);<br> 
             ... <br>
+            </div>
            </code>
            <p>Take a look at the code and ensure you understand why it behaves that way before proceeding. Try changing the code , so it prints out student 2 info... Then change it again to print out Studnet 3 info, and lastly student 4. You can also add a new key with a value of an array, instead of Object. Try accessing this fifth student info also. </p>
            <p>Let's take a look at adding new key to our objects after the declaration. You guessed right. Just instead of accessing the value, we assign a value. If a value has already been given to the key, it gets overriden. Overriden as in, the value has been changed completely as if you never gave it the value. Changing the value of something, removes the orignal value and replace it with the new value (that's somehow general). </p>
            <code>
             ... <br>
+            <div class="copy">
             const studentInfo = {<br>
                 <br>
             };<br>
@@ -248,6 +276,7 @@
             <br>
             console.log(studentInfo);<br>
             console.log(studentInfo.student1);<br>
+            </div>
             ... <br>
            </code>
            <p>Check your console to confirm if the program works working perfectly! You might've noticed the semi-colon style... This is used to mark the end of our statement. (Note: Statetment meaning in programming langs is equivalent in meaning with that of English lang statement) </p>
@@ -258,20 +287,24 @@
            <p>Don't forget the let is used for block-scoped variable. Remember the block is just a open curly bracket and a closed curly bracket:</p>
            <code>
             ... <br>
+            <div class="copy">
             {<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;let wow = "Whoa! I'm learing function"<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;console.log(wow);<br>
             }<br>
             <br>
             console.log(wow);<br>
+            </div>
             ... <br>
            </code>
            <p>Hopefully that looks semantically similar. This exact block is where we'll put in our code. But we'll have to follow the syntax to create a function:</p>
            <code>
             ... <br>
+            <div class="copy">
             function function-name() {<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;//your code goes in here <br>
             }<br>
+            </div>
             ... <br>
            </code>
            <p>Function is a keyword. Function name is a name that you give your function (just like we gave variable variable-name, we also gave a function function-name and they both follow the same set of rules). Your function name must be decriptive (must give a hint of what the function does). Imagine a function that prints "I love you" using console.log three times. We can't use the function name 3xMessage or Console3xMessage. </p>
@@ -280,11 +313,13 @@
            <p>Now, let's create a function that prints "I love you" to our console. </p>
            <code>
             ... <br>
+            <div class="copy">
             function message() {<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;console.log("I love you");<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;console.log("I love you");<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;console.log("I love you");<br>
             }<br>
+            </div>
             ... <br>
            </code>
            <p>We've created our function, but how can we invoke it (as in -- call). To call a function, you follow the function name with opening and closing bracket. The brackets are for passing a parameter to our function. You can also call this an argument. But it's more preferred to call the arguments passed into a function when calling it a parameter. </p>
@@ -292,6 +327,7 @@
            <p>Let's call our above function. </p>
            <code>
             ... <br>
+            <div  class="copy">
             function message() {<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;console.log("I love you");<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;console.log("I love you");<br>
@@ -299,11 +335,13 @@
             }<br>
             <br>
             message();<br>
+            </div>
             ... <br>
            </code>
            <p>If you run the above code, it first create the function then calls the function. When the function was called, it executes all the stuffs you put inside it's block (The block once again starts with "{" and ends with "}"). As in this three lines of code are inside a block: </p>
            <code>
             ... <br>
+            <div class="copy">
             function message() {<br>
                 <span class="red">&nbsp;&nbsp;&nbsp;&nbsp;console.log("I love you");</span><br>
                 <span class="red">&nbsp;&nbsp;&nbsp;&nbsp;console.log("I love you");</span><br>
@@ -311,11 +349,13 @@
             }<br>
             <br>
             message();<br>
+            </div>
             ... <br>
            </code>
            <p>Please note, the above code is not a program to run, it's just for explanation purpose. We'll come across this kind of code whenever there's something being explained. Take a look at the code in red. That's our block code. Go ahead and change it to something else and watched it executed once you call the function. (You always call the function by calling the function name with brackets and passed in parammeter if necessary). You can call a function as many times as you want. Let's call our function  (the function we've been using) three times: </p>
            <code>
             ... <br>
+            <div class="copy">
             function message() {<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;console.log("I love you");<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;console.log("I love you");<br>
@@ -325,27 +365,33 @@
             message();<br>
             message();<br>
             message();<br>
+            </div>
             ... <br>
            </code>
            <p>Now that we've understood what  a function is, let's learn about "<b>functions with arguments</b>". Alright... So a function that needs some kind of parameter (when constructing/creating your function it's an argument) is created slightly different than our above function. </p>
            <code>
             ... <br>
+            <div class="copy">
             function function-name(...arguments){<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;//Your code goes here. <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;//You might make use of the parameters or not. <br>
             }<br>
+            </div>
             ...<br>
            </code>
            <p>The <b>...arguments</b> is used to indicate that any number of arguments can be passed in by the parameters... If you need 8 parameters, your agument must be greater or equal to 8.... And some of these arguments should not be mandatory. </p>
            <p>We're going to learn function by taking a look at a function we've already been using... Alert is a function that takes in a parameter.</p>
            <code>
             ...<br>
+            <div class="copy">
             alert(//The parameter goes here);<br>
+            </div>
             ...<br>
            </code>
            <p>We've been using functions with arguments quite a lot. Let's construct ours!</p>
            <code>
             ... <br>
+            <div class="copy">
             function message(message) {<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;console.log(message);<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;console.log(message);<br>
@@ -355,6 +401,7 @@
             message("I love you");<br>
             message("I love you");<br>
             message("I love you");<br>
+            </div>
             ... <br>
            </code>
            <p>Let's try to break things down a bit... </p>
@@ -362,6 +409,7 @@
            <p>When we call the function, the parameter is converted to a variable called message in our function by default: </p>
            <code>
             ... <br>
+            <div class="copy">
             function message(<span class="red">message</span>) {<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;console.log(message);<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;console.log(message);<br>
@@ -371,12 +419,14 @@
             message("I love you");<br>
             message("I love you");<br>
             message("I love you");<br>
+            </div>
             ... <br>
            </code>
            <p>This variable only exist within the function as a local variable. If you want to use it in some other parts of the program, make it global but you might want to change that of our variable name to something different from "message" since it matches(the same) the function name. </p>
            <p>After we've got the message as a variable, we then make use of it in our block code...</p>
            <code>
             ... <br>
+            <div class="copy">
             function message(message) {<br>
                 <span class="red">&nbsp;&nbsp;&nbsp;&nbsp;console.log(message);</span><br>
                 <span class="red">&nbsp;&nbsp;&nbsp;&nbsp;console.log(message);</span><br>
@@ -386,27 +436,33 @@
             message("I love you");<br>
             message("I love you");<br>
             message("I love you");<br>
+            </div>
             ... <br>
            </code>
            <p>How about hinting... and the default... The default is used by our argument if we got no parameter/parameters... To make use of that, just pass in the default directly in the arguments like this: </p>
            <code>
             ... <br>
+            <div class="copy">
             function message(message="I love you"){<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;console.log(message);<br>
             }<br>
+            </div>
             ...<br>
            </code>
            <p>If you're using code editors like VS Code, whenever you tried caling the function it tells you it's default value along with it's data type. The default value can be anything but the type should match the type of parameters that you want. In our case, we want a string... Any string... So a more appropiate and correct program will look like below:</p>
            <code>
             ... <br>
+            <div class="copy">
             function message(message=" "){<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;console.log(message);<br>
             }<br>
+            </div>
             ...<br>
            </code>
            <p>Message is default to a string... Recall that " " (Space) is also a string as long as it is in quote... Anything in quotes are strings. For explanation purpose we won't stick with latter. Now, let's try calling the function without passing in any parameters... </p>
            <code>
             ... <br>
+            <div class="copy">
             function message(message="I love you") {<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;console.log(message);<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;console.log(message);<br>
@@ -416,6 +472,7 @@
             message();<br>
             message();<br>
             message();<br>
+            </div>
             ... <br>
            </code>
            <p>We'll learn alot about functions in the future. Some functions behaves as an Object. We have arrow functions to avoid something called binding which has to do with functions in another function. We'll learn all about this and lot more in future lessons.</p>
@@ -424,12 +481,16 @@
            <p>Undefined is when you want to have access to a variable you've not defined. Let's go back to our variable basics: </p>
            <code>
             ... <br>
+            <div class="copy">
             var variable-name = value<br>
-            ... <br>
+            </div>
+            ... 
+            </div>
            </code>
            <p>Let's say you didn't give it a value when you create the variable, it defaults itself to "undefined". Undefined is pretty useful. You might want to use a variable in your programs and it starts behaving weirdly, kindly check if it's undefined or not.</p>
            <code>
             ... <br>
+            <div class="copy">
             let name <br>
             <br>
             console.log(name);
@@ -437,18 +498,30 @@
             name = "John";
             <br><br>
             console.log(name);<br>
+            </div>
             ... <br>
            </code>
            <p>It's pretty wise to think of undefined as "not given a value yet". It has some other use case that we'll learn about in the future. </p>
         </section>
         <section id="task">
             <h2>Task</h2>
-            <p>Welcome to day 4 task. Let's make use of</p>
+            <p>Welcome to day 4 task. Let's make use of most of what we've learnt so far. </p>
         </section>
 
     </main>
-<script async="async" data-cfasync="false" src="//pl25735339.profitablecpmrate.com/3db1dbcc7396851dea3931b5223992ce/invoke.js"></script>
-<div id="container-3db1dbcc7396851dea3931b5223992ce"></div>
+
+    <fieldset class="ad">
+        <legend>ADS</legend>
+        <iframe src="https://www.profitablecpmrate.com/irra5dti?key=3a73537c4f97d61429727a394fbbfa41"></iframe>    
+        <iframe src="https://www.profitablecpmrate.com/irra5dti?key=3a73537c4f97d61429727a394fbbfa41"></iframe>
+        <iframe src="https://www.profitablecpmrate.com/irra5dti?key=3a73537c4f97d61429727a394fbbfa41"></iframe>
+        <iframe src="https://www.profitablecpmrate.com/irra5dti?key=3a73537c4f97d61429727a394fbbfa41"></iframe>
+        <iframe src="https://www.profitablecpmrate.com/irra5dti?key=3a73537c4f97d61429727a394fbbfa41"></iframe>
+        <iframe src="https://www.profitablecpmrate.com/irra5dti?key=3a73537c4f97d61429727a394fbbfa41"></iframe>
+        <iframe src="https://www.profitablecpmrate.com/irra5dti?key=3a73537c4f97d61429727a394fbbfa41"></iframe>
+    </fieldset>
+
+    <div id="message"></div>
     <script src="script/script.js"></script>
     <script src="./../js/copy.js"></script>
     <script src="./../js/days_nav.js"></script>
