@@ -8,8 +8,7 @@
 </head>
 <body>
     <script type='text/javascript' src='//pl24106250.profitablecpmrate.com/b3/4b/16/b34b163f80dc94828ab604d9f70c4c33.js'></script>
-    <script async="async" data-cfasync="false" src="//pl25735339.profitablecpmrate.com/3db1dbcc7396851dea3931b5223992ce/invoke.js"></script>
-<div id="container-3db1dbcc7396851dea3931b5223992ce"></div>
+
     <header>
         <h1>100 Days With JavaScript</h1>
         <nav>
@@ -502,14 +501,96 @@
             ... <br>
            </code>
            <p>It's pretty wise to think of undefined as "not given a value yet". It has some other use case that we'll learn about in the future. </p>
+           <h3>Null, Undefined, and Nan</h3>
+           <p>I'll quickly go over this concept briefly. </p>
+           <p>We've learnt about Strings... But one important thing we've not talked about when it comes to strings is that they are actually array of characters. We've learnt about Array too in earlier sub-sections. What was meant by this is that, there is actually no string... It's just an array of whatever that string was (what was put in quote). e.g: </p>
+           <code>
+            <div class="copy">
+            const text = "I Love JavaScript";
+            <br>
+            console.log(text);
+            </div>
+           </code>
+           <p>And recall that we can get the length of a text by getting it's length property by this: </p>
+           <code>
+            <div class="copy">
+            const text = "I Love JavaScript";
+            <br>
+            console.log(text.length);
+            </div>
+           </code>
+           <p>So what exactly is going on under the hood is that each character is mapped to an item in our array of characters contagiously. </p>
+           <p>Take a look at under the hood: </p>
+           <code>
+            ... <br>
+            <div class="copy">
+
+            //Under the hood<br>
+            const text = "I Love JavaScript";<br>
+            //is actually <br>
+            ["I", " ", "L", "o", "v", "e", " ", "J", "a", "v", "a", "S", "c", "r", "i", "p", "t"]<br>
+            </div>
+            ... <br>
+           </code>
+           <p>But then the question that first comes to mind was that what is the value of our variable if the length of our string is Zero. If we stored nothing to our array. Not even a character (including a space). Well, we get null.</p>
+           <p>In some programming languages it is called Nil. But in JavaScript it is Null (same with some programming languages). Nil or Null literally means Nothing. This time around, we actually declared our variable and assigned it with a value but that value is... Nothing. So we get Nothing as the default (Nothing is also null -- in lowercase though). Let's check below example: </p>
+           <code>
+            <div class="copy">
+                const nothing = "";
+                <br>
+                alert(nothing);
+            </div>
+           </code>
+           <p>Well, the alert box gives us <i>nothing</i>. To tell JavaScript that i want to give this variable a value of nothing you assign it with the null value. The above code is not wisely constructed as compared to the code example shown below: </p>
+           <code>
+            <div class="copy">
+                const nothing = null;
+                <br>
+                alert(nothing);
+            </div>
+           </code>
+           <p>We adheres to this same principle if we literally want to store nothing to our variable. We can give it a value later on, but before that, if you want to gave it a value of nothing, just assign it with a null value.</p>
+           <p>We've talked about undefined which is literally no value given. In other words, it hasn't been defined. Let's take a look at below example:</p>
+           <code>
+            <div class="copy">
+                let nothing;
+                <br>
+                alert(nothing);
+            </div>
+           </code>
+           <p>We get undefined. Now, you might be thinking what is the difference between null and undefined anyway? Null is when you assigned a variable with a value of nothing. Undefined means you've not assgined it a value yet, not even nothing (null/nil in programming world).</p>
+           <p>Let's round off the lesson by learning about Nan. Nan is abbrviation for Not-A-Number. This happens when you try doing numerical stuffs with values with data types different from number. You also get a Nan if you try to convert "what can't be converted to a number" to a number. JavaScript interpreter let us know that whatever this value is, it is not a number. </p>
+
         </section>
         <section id="task">
             <h2>Task</h2>
             <p>Welcome to day 4 task. Let's make use of most of what we've learnt so far. </p>
+            <p>In this project, we're going to create a function that store name of students. First create a variable with the data type of an array.  We'll push in a student as an object, each student has a key of name (string), age (number), and hobbies (array) . </p>
+            <code>
+                <div class="copy">
+                    //********PROJECT STRUCTURE********//<br>
+                    <br>
+                    //STUDENT STRUCTURE<br>
+                    {<br>
+                        name: //String <br>
+                        age: //Number <br>
+                        hobbies: //Array <br>
+                    }
+                </div>
+            </code>
+            <p>The function takes in name, age and hobbies... create the object and pushes it to the array. After you've completed the program, try calling in the function and checks if everything works perfectly fine. If no parameters are passed in, does the program uses the default arguments? What happends if you passed the parameters in correctly? What happens to the array when you do so? </p>
+            <p>We'll learn about converting data from a type to "another type or the same type" in the next lesson. </p>
         </section>
 
     </main>
 
+    <div id="message"></div>
+    <pre>
+
+
+
+        
+    </pre>
     <fieldset class="ad">
         <legend>ADS</legend>
         <iframe src="https://www.profitablecpmrate.com/irra5dti?key=3a73537c4f97d61429727a394fbbfa41"></iframe>    
@@ -521,8 +602,7 @@
         <iframe src="https://www.profitablecpmrate.com/irra5dti?key=3a73537c4f97d61429727a394fbbfa41"></iframe>
     </fieldset>
 
-    <div id="message"></div>
-    <script src="script/script.js"></script>
+    <script src="script/script.js" type="module"></script>
     <script src="./../js/copy.js"></script>
     <script src="./../js/days_nav.js"></script>
 </body>
