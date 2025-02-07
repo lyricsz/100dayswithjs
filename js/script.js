@@ -79,3 +79,4 @@ function hexToRgb(hex) {
       b: parseInt(result[3], 16)
     } : null;
 }
+

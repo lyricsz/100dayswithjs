@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inputting in JavaScript - 100 days with JS - Day 5</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <script type='text/javascript' src='//pl24106250.profitablecpmrate.com/b3/4b/16/b34b163f80dc94828ab604d9f70c4c33.js'></script>
@@ -38,10 +39,202 @@
         </section>
         <section id="tutorial">
             <h2>Tutorial</h2>
-            <p>//...........</p>
+            <p>We've learn about outputting data in JavaScript in lesson 1 by making use of document.write method, console.log method, windows alert method (we'll explain all about DOM (Document Object Model) and DOM manipulation in the future). </p>
+            <p>In this lesson, we'll learn how we can accept data input from the user. We can accept data input from the user in many various ways that we won't be discussing all of these ways in this tutorial. </p>
+            <p>To accept a text from the user, we can use the more appropiate way using input element in html. Since we won't be discusssing about DOM in this tutorial we'll learn about how to do exactly that in the next lesson. In this tutorial, to accept a text from the user we'll be using the prompt method of the window. (The window has alot of other methods and properties, hence these are called the BOM -- Browser Object Model).</p>
+            <p>To accept a Yes or No input from the user, we'll use the confirm method of the window. </p>
+            <h3>The Prompt Method</h3>
+            <p>The prompt method of the window works the same way as the alert method. Infact all window functions(also method) works this same way. We can call them in two different ways, by appending it with <i>window.</i> [<b>window.alert()</b>] or by just calling it [<b>alert()</b>] </p>
+            <p>Since prompt is a method of the window object (We'll stick with API once it is explained in the future), that means we can call it in two ways: </p>
+            <code>
+                <div class="copy">
+                    prompt();
+                </div>
+            </code>
+            <p>or</p>
+            <code>
+                <div class="copy">
+                    window.prompt();
+                </div>
+            </code>
+            <p>Let's say we called it , what do we expect? Well, if you try calling it... The user is presented with a input box, so the user can type in a text or anything. The problem this posed was, if i enter a text during the execution of the program, how will i know what text i entered once i've entered it? How can i make use of this user data in some part of my program? Well, this is where we learn more about the return value. A function can return a value when it is called. You can make use of this return value however you like: </p>
+            <code>
+                <div class="copy">
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html lang="en"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt; Prompt Method - Example &lt;/title&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Your name is ", prompt());<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;<br>
+                    &lt;/html&gt;<br>
+                </div>
+            </code>
+            <p>When you run the above code, the prompt method is called which presents the user a box to enter a text, whatever the text the user entered, it is return to where the function is being called. Enter any name and check your console to ensure everything is working as intended. </p>
+            <p>But this isn't a well structured program, was it? Once we've got the return value we just log it to the console and there's no other way to make use of the value in other part of our program. We can fix this by storing the return value to a variable. We'll be using let keyword this time to declare our variable. </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    let name = prompt();<br>
+                    console.log("Your name is ", name);<br>
+                    console.log(name, " is learning JavaScript.");
+                </div>
+                ... <br>
+            </code>
+            <p>You might be wondering why we're using commas instead of string concatenation operator (+), using comma is provided to us by console.log... Console.log is the defacto way of printing message for debugging or learning purpose. </p>
+            <p>We understood that we're suppose to enter our name, but our program must be implemented for any user, in any space and time in this world. To inform the user any message related to the expected input, you can pass this message in as a parameter (we've discussed about this when learning about functions). Let's take a look at our modified example:</p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    let firstName = prompt("What is your first name?");<br>
+                    let lastName = prompt("What is your last name?");<br>
+                    let favLanguage = prompt("What is your favourite language?"); <br>
+                    <br>
+                    console.log("Your name is " + firstName + " " + lastName);<br>
+                    console.log(firstName, " is learning JavaScript.");<br>
+                    console.log(firstName, ", you like ", favLanguage, " language.");<br>
+                </div>
+                ... <br>
+            </code>
+            <p>You can also pass in default value as a second parameter to the prompt method: </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    let firstName = prompt("What is your first name?", "John");<br>
+                    let lastName = prompt("What is your last name?", "Doe");<br>
+                    let favLanguage = prompt("What is your favourite language?", "Mandarin"); <br>
+                    <br>
+                    console.log("Your name is " + firstName + " " + lastName);<br>
+                    console.log(firstName, " is learning JavaScript.");<br>
+                    console.log(firstName, ", you like ", favLanguage, " language.");<br>
+                </div>
+                ... <br>
+            </code>
+            <p>I'ld advise you investigate the above code and ensure you've understood how it works before moving on to the next section.</p>
+
+            <h3>The Confirm Method</h3>
+            <p>The confirm method is used to get Yes or No answer from the user. You've come in contact with these type of dialog almost every time. Facebook for example, when you tried deleting a post it sents you a dialog to give you a last warning notice if you're sure you really want to delete it. This Yes or No boxes is so common and can even be customized using DOM as we'll explore this part in the future. </p>
+            <p>The confirm method returns true or false based on the user input. If Yes , it returns true. If No , it returns false. We can make use of this in a coditional statement... We'll learn about how to make decision based on condition in the future. </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    let playingGame = confirm();<br>
+                    console.log("Are you playing game? " + playingGame);<br>
+                </div>
+                ... <br>
+            </code>
+            <p>When you clicked on Okay, it returns true. Otherwise, it returns false. It also accepts parameters just like the prompt method. Let's revised the last example: </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    let playingGame = confirm("Are you currently playing game? ");<br>
+                    console.log("Are you playing game? " + playingGame);<br>
+                </div>
+                ... <br>
+            </code>
+            <p>There are alot of things you can do with the return value (the value being returned in confirm method is boolean value while that of prompt is a string value) here. We'll came across such examples when learning about conditionals. </p>
+            <p>You can also accept text from the user using HTML input elements. We'll discussed this in the next section. But before that, let's learn about the typeof keyword and type conversion. </p>
+            <h3>Typeof and Type Casting</h3>
+            <p> To know what type of data we're using , we can check the program and try to make deduction from it or we can explicitly use the typeof keyword to know what type of data we have in our variable. </p>
+            <p>Take a look at below code, what type of data is the variable's value? </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    let age = 10; <br>
+                    alert("Your age is " + age); <br>
+                </div> 
+                ... <br>
+            </code>
+            <p>To explicitly know what our type our data is, we make use of the typeof keyword. Follow the typeof keyword with the variabla name (or the data you want to check it's type). </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    let age = 10; <br>
+                    alert("Your age is a " + typeof age); <br>
+                </div> 
+                ... <br>
+            </code>
+            <p>This opens alot of opportunity, we can now check the data type for all data that we have. Remember that each data type can only be from the data type listed in day 3. You can revisit day 3 lesson if you think it's necessary to review. </p>
+            <p>First of all, let's take a look at the data type of the return value of a prompt function. </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    let test = prompt("Enter anything: ");<br>
+                    console.log("The data type of prompt return value is ", typeof test);<br>
+                </div>
+                ... <br>
+            </code>
+            <p>Let's go ahead and try that of confirm to ensure it indeed return a true or false to us. </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    let test = confirm("Did you want to continue learning JavaScript? ");<br>
+                    console.log("The data type of confirm return value is ", typeof test);<br>
+                </div>
+                ... <br>
+            </code>
+            <p>And we indeed get Boolean  (has only two value -- true or false). Let's go over another example to get a better understanding of this keyword: </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    const name = "John Doe";<br>
+                    const age = 24;<br>
+                    const hobbies = ["Dancing", "Hacking", "Cooking"];<br>
+                    const programmingLanguages = {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;favorite: ["Python", "JavaScript", "SQL"], <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;nonFavorie: ["C", "Pascal", "MySQL"] <br>
+                    };<br>
+                    const over18 = true;<br>
+                    const height = null;<br>
+                    const girlfriend;<br>
+                    <br>
+                    console.log("Type of name ", typeof name);<br>
+                    console.log("Type of age ", typeof age);<br>
+                    console.log("Type of hobbies ", typeof hobbies);<br>
+                    console.log("Type of programming languages ", typeof programmingLanguages);<br>
+                    console.log("Type of over 18 ", typeof over18);<br>
+                    console.log("Type of height ", typeof height);<br>
+                    console.log("Type of girlfriend ", typeof girlfriend);<br>
+                </div>
+                ... <br>
+            </code>
+            <p>If you run this program, you'll encounter an error. This is because you have to assign a value to a constant variable. You can't just declare a constant variable without assigning it a variable, the interpreter will flag this as an error. </p>
+            <p>Let's try to fix that by using let instead of a const: </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    const name = "John Doe";<br>
+                    const age = 24;<br>
+                    const hobbies = ["Dancing", "Hacking", "Cooking"];<br>
+                    const programmingLanguages = {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;favorite: ["Python", "JavaScript", "SQL"], <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;nonFavorie: ["C", "Pascal", "MySQL"] <br>
+                    };<br>
+                    const over18 = true;<br>
+                    const height = null;<br>
+                    let girlfriend;<br>
+                    <br>
+                    console.log("Type of name ", typeof name);<br>
+                    console.log("Type of age ", typeof age);<br>
+                    console.log("Type of hobbies ", typeof hobbies);<br>
+                    console.log("Type of programming languages ", typeof programmingLanguages);<br>
+                    console.log("Type of over 18 ", typeof over18);<br>
+                    console.log("Type of height ", typeof height);<br>
+                    console.log("Type of girlfriend ", typeof girlfriend);<br>
+                </div>
+                ... <br>
+            </code>
+            <p>Null is a type of object. What's weird is that Array is also a type of an object. This is a bug and not exactly a coincidence. You'll learn more about these two and their similarities and differences in the future.</p>
+            <p>The typeof evaluates the data in front of it. This is one of the main reason why we called typeof an operator. </p>
+            <p>Type Conversion is when the interpreter tries to convert a data from one type to another for us. This usually leads to bugs as we (the programmer) are confused of what exactly is going on when we expect something to behave as a string but it's acting as a number. </p>
+            <p>Type Casting is when we convert a data from one type to another type or the same type explicitly. I've been mixing these two important concepts with each other since, i apologize for that. </p>
+            <p>We can Type cast in JavaScript using the provided function given to us. To type cast any data type to another data type, check out below table of the list of available functions to type cast: </p>
         </section>
         <section id="task">
-            <h2>Introduction</h2>
+            <h2>Task</h2>
             <p>//...........</p>
         </section>
     </main>
@@ -62,7 +255,8 @@
         <iframe src="https://www.profitablecpmrate.com/irra5dti?key=3a73537c4f97d61429727a394fbbfa41"></iframe>
         <iframe src="https://www.profitablecpmrate.com/irra5dti?key=3a73537c4f97d61429727a394fbbfa41"></iframe>
     </fieldset>
-    <script src="script/script.js"></script>
+
+    <script src="script/script.js" type="module"></script>
     <script src="./../js/copy.js"></script>
     <script src="./../js/days_nav.js"></script>
 </body>
