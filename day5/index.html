@@ -29,7 +29,7 @@
         <nav>
             <ol>
                 <li> <a href="#introduction"> Introduction </a> </li>
-                <li> <a href="#tutorial"> Lesson </a> </li>
+                <li> <a href="#tutorial"> Tutorial </a> </li>
                 <li> <a href="#task"> Task </a> </li>
             </ol>
         </nav>
@@ -231,11 +231,43 @@
             <p>The typeof evaluates the data in front of it. This is one of the main reason why we called typeof an operator. </p>
             <p>Type Conversion is when the interpreter tries to convert a data from one type to another for us. This usually leads to bugs as we (the programmer) are confused of what exactly is going on when we expect something to behave as a string but it's acting as a number. </p>
             <p>Type Casting is when we convert a data from one type to another type or the same type explicitly. I've been mixing these two important concepts with each other since, i apologize for that. </p>
-            <p>We can Type cast in JavaScript using the provided function given to us. To type cast any data type to another data type, check out below table of the list of available functions to type cast: </p>
+            <p>We can Type cast in JavaScript using the provided function given to us. To type cast any data type to another data type, check out below available functions to type cast and their usage: </p>
+            <dl>
+                <dt>Number</dt>
+                <dd>The Number method takes a parameter, converts the parameter to a data type of number and returns the value. We use this mostly to convert a data type from a string to a number. To call a Number method, just call it the same way you called methods. Let's check out below example, we try to convert a string that was returned by a prompt to a number. Please note that if it can't be converted to number, we get Nan (Not-A-Number):
+                <code>
+                    ... <br>
+                    <div class="copy">
+                        let age = prompt("Enter your age: ", 20); <br>
+                        age = Number(age); <br>
+                        <br>
+                        alert("Your current age is " + age);<br>
+                        alert("Your age is a " + typeof age);<br>
+                    </div>
+                    ... <br>
+                </code>
+                </dd>
+                <dt>String</dt>
+                <dd>The string is used to convert a data to string. We can do this with Numbers e.t.c. We'll learn more about each data type in the future, so it's completely fine if you haven't got the hang of it... Let's try converting a number to string using the string method.
+                <code>
+                    ... <br>
+                    <div class="copy">
+                        let age = 10; <br>
+                        age = String(age); <br>
+                        <br>
+                        alert("Your current age is " + age);<br>
+                        alert("Your age is a " + typeof age);<br>
+                    </div>
+                    ... <br>
+                </code> 
+                </dd>
+            </dl>
+            <p>These are the basics type casting that you should be aware of. As we learn more about numbers, we'll see hoe type conversion happens in JavaScript... and some really buggy interpretation of our program. </p>
+            <p>Before we finish these day 5 lesson, try converting boolean values to number or string. What happens if you try Array? Or Null? Or undefined? Or Nan? Or others... Remember, never quench the curiosity in you, Adieu.</p>
         </section>
         <section id="task">
             <h2>Task</h2>
-            <p>//...........</p>
+            <p>The task for today is really simple. Build anything using the prompt and the confirm method only... You can of course mix in some concepts that we've taugt. (Mixing in concepts we've yet to discussed will be flagged as cheating). </p>
         </section>
     </main>
     <div id="message"></div>
