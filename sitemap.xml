@@ -2,38 +2,8 @@
 		<!--	created with www.mysitemapgenerator.com	-->
 		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-	<loc>https://lyricsz.github.io/</loc>
+	<loc>https://lyricsz.github.io/100dayswithjs</loc>
 	<lastmod>2025-02-18T19:59:21+01:00</lastmod>
 	<priority>1.0</priority>
-</url>
-<url>
-	<loc>https://lyricsz.github.io/subscribe/</loc>
-	<lastmod>2025-02-18T19:59:23+01:00</lastmod>
-	<priority>0.8</priority>
-</url>
-<url>
-	<loc>https://lyricsz.github.io/lyrics/</loc>
-	<lastmod>2025-02-18T19:59:24+01:00</lastmod>
-	<priority>0.8</priority>
-</url>
-<url>
-	<loc>https://lyricsz.github.io/gamesstore/</loc>
-	<lastmod>2025-02-18T19:59:24+01:00</lastmod>
-	<priority>0.8</priority>
-</url>
-<url>
-	<loc>https://lyricsz.github.io/gamesstore/contact/</loc>
-	<lastmod>2025-02-18T19:59:27+01:00</lastmod>
-	<priority>0.6</priority>
-</url>
-<url>
-	<loc>https://lyricsz.github.io/gamesstore/gamesandapps/</loc>
-	<lastmod>2025-02-18T19:59:27+01:00</lastmod>
-	<priority>0.6</priority>
-</url>
-<url>
-	<loc>https://lyricsz.github.io/gamesstore/about/</loc>
-	<lastmod>2025-02-18T19:59:27+01:00</lastmod>
-	<priority>0.6</priority>
 </url>
 </urlset>
