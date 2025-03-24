@@ -14,9 +14,7 @@ document.querySelectorAll("div.copy").forEach((el, index) => {
 });
 
 async function copy(a){
-    console.log(a);
     const key = a.target.accessKey
-    console.log(key)
     const wordToCopy = document.getElementById(key);
     await navigator.clipboard.writeText(wordToCopy.outerText) 
     .then (onfulfilled = (message) => {

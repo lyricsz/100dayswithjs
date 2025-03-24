@@ -1,6 +1,8 @@
 * {
     box-sizing: border-box;
     color: antiquewhite;
+    word-spacing: 4px;
+    line-height: 24px;
 }
 
 body {
@@ -39,7 +41,9 @@ header ul li {
 }
 
 a{
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-color: hsl(240, 73%, 10%);
+    text-shadow: 1px 0px 1px gray;
 }
 
 h1, h2, h3{
@@ -200,4 +204,27 @@ footer nav ul {
 footer nav ul li {
     width: 16%;
     display: inline-block;
+}
+
+ul {
+    text-align: left;
+}
+
+details {
+    text-align: left;
+    padding:  10px 20px;
+}
+
+.outputImg {
+    max-width: 50%;
+    min-width: 40%;
+}
+
+.sideQuizzes {
+    color: gray;
+}
+
+.notForSelect {
+    user-select: none;
+    cursor: pointer;
 }

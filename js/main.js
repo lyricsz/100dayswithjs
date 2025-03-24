@@ -14,6 +14,14 @@ let lessonsAndDescription = [
     {
         lesson: "4",
         description: "Data Types P. 2 - 100 Days with JS - Day 4"
+    },
+    {
+        lesson: "5",
+        description: "Outputting in JS - 100 Days with JS - Day 5"
+    },
+    {
+        lesson: "6",
+        description: "DOM (Document Object Model) - 100 Days with JS - Day 6"
     }
 ]
 

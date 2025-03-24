@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <script type='text/javascript' src='//pl24106250.profitablecpmrate.com/b3/4b/16/b34b163f80dc94828ab604d9f70c4c33.js'></script>
-
     <header>
         <h1>100 Days With JavaScript</h1>
         <nav>
@@ -35,11 +33,351 @@
         </nav>
         <section id="introduction">
             <h2>Introduction</h2>
-            <p></p>
+            <p>Hello Learners from all across the globe. Today (Day 6), we'll be learning about DOM, an acronym for Document Object Model. We'll see how useful  a data type we've learned about is - <strong>Objects</strong>. If you have no idea what Objects are, kindly review the previous lessons also to really get a good grasp of what we'll be learning today, a basic knowledge of HTML5 is required. </p>
         </section>
         <section id="tutorial">
             <h2>Tutorial</h2>
-            <p></p>
+            <p>DOM or Document Object Model is an API, that let us interact, create and manipulate our Objects on a page. Objects here refers to everything our page consist of. From the style (CSS) to the scripts (JS) to elements (HTML). But most importantly, it is used in retrieval, creation and manipulation of elements in our web page (not limited to only elements). </p>
+            <p>To really understood this, let's take a look at what our web page does under the hood every time we create a web page. Let's take a look at below code: </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html&gt;<br>
+                    &lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt; A Simple Webpage &lt;/title&gt;<br>
+                    &lt;/head&gt;<br>
+                    &lt;body&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Hello World&lt;/h2&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt; A simple "Hello World" page. &lt;/p&gt;<br>
+                    &lt;/body&gt;<br>
+                    &lt;/html&gt;
+                </div>
+                ... <br>
+            </code>
+            <p>Your result when you run the page should look like this: <br>
+            <img class="outputImg" src="./../assets/images/img6-1.png" alt="Image 6-1: First code output on  a chrome web browser"></p>
+            <p>If you have no idea what HTML is, you can take a crash course on it on W3C or on HTML with PJ Dev. </p>
+            <p>A simple web page has been created but what was going under the hood? Well, as far as we're concerned, what was going under the hood is that our web page was translated into a tree-like structure for us. This can let us use the dom api's to perform basic operations such as deletion or additions (appending) of new elements, manipulations of elements and trust me , the list goes on! A basic representation of our code below in a DOM Tree (The tree-like structure of our DOM is referred to as DOM Tree in, well, Web Development World): </p>
+            <img src="./../assets/images/dom.svg" class="outputImg">
+            <p>This is actually a rough sketch, We'll be including images in this tutorials, as it might aid in better clarification than text. Also, inline quizzes will be added. Inline quizzes is just a way of saying a quizzes that doesn't interrupt your learning but was added inline with other text, like a casual-quiz (Is that even a word?). Both of these addition to the tutorial was aimed at making learning material more easy to understand and to really let it stick for a while. </p>
+            <p>Hopefully web developers don't give me a strike for the silly rough sketch above but trust me, this is all we need to get a better understanding of what the DOM tree look-like. </p>
+            <p>A tree in general is contain of what we call "Nodes"... It's actually a not-so difficult concept (Don't let the name scares you). Normally, in HTML when we add an element to a web page, we added a new node actually. Imagine the paragraph element in the above code... (<span class="sideQuizzes">The Paragraph element in the code above has what content? <label class="notForSelect sideQuizzes" ><input type="radio" name="a">A simple "Hello World" page.</label><label class="notForSelect sideQuizzes"><input type="radio" name="a">A simple "Hello World" page.</label></span>), it has an opening tag, a closing tag and content. We can add attributes to it to further add some information and definition to it (e.g title or style -- inline style)... That's all. For the HTML part, but for the JS Part, what we added is more than just element... It's a Node. A Node is really nothing more than element, but contains a lot than normal elements. </p>
+            <p>There is another important thing to understand about our DOM Tree. (Before we move on to the fun part): </p>
+            <img src="./../assets/images/dom.svg" class="outputImg">
+            <p>A tree-like structure only has a node as its parent. In our above diagram, that's the document. The document has two nodes (think of the document as the root tag, because that's what it is) as its child. The childs are the "<strong>Head</strong>" and the "<strong>Body</strong>". The document is the parent of these childrens.  But that's not the end, the children also has children... The <strong>Head</strong> has a children (the <strong>Title</strong>), The body has two children (the <strong>H2</strong> and <strong>P</strong>). What is the Document (the root) relation to the P? If you think of grand-parent, you're absolutely right. Think of the family tree we're taught back in our first 6 grades, the tree structure is not so different from a family tree. </p>
+            <p>To give you a hint of this structure, think of moving up as going to parent (I'll be using traversing as moving up or down) and traversing down as going to children/childrens/none. </p>
+            <p>If an element "2" is nested to another element "1" (I'll be naming elements from now on, for better accumulation), it becomes the children and that element now has a parent (the element it was nested to). Suppose that nested element also has another nested element named 3, well, 3 is the child of 2 and 2 is the parent of 3. 1 is the parent of 2 and 1 is the grand-parent of 3. <br>
+            <img src="./../assets/images/image6-3.svg" alt="3 nested to 2, 2 nested to 1. 1 is the root" class="outputImg"></p>
+            <p>And lastly let's take a look at another tree structure. But with code instead. </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html&gt;<br>
+                    &lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt; A Simple Webpage &lt;/title&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset='utf-8' /&gt;<br>
+                    &lt;/head&gt;<br>
+                    &lt;body&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Hello World&lt;/h2&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt; A simple &lt;span&gt;"Hello World"&lt;/span&gt; page. &lt;/p&gt;<br>
+                    &lt;/body&gt;<br>
+                    &lt;/html&gt;
+                </div>
+                ... <br>
+            </code>
+            <p>I won't translate it to tree-like, I believe by now we all can do that. First of all, how many children does the Head node has? It's just two right? Second, how many children does the Body node has? Well, it's still 2. but it now has a  (<label class="notForSelect sideQuizzes" ><input type="radio" name="b">3 children</label><label class="notForSelect sideQuizzes"><input type="radio" name="b">Grand-child</label>) . </p>
+            <p>A side-task will be to draw the DOM tree of the above code. </p>
+            <p>Now let's move on to the fun part!</p>
+            <h3>Manipulating The Content of Element</h3>
+            <p>First of all, in order to manipulate the content of an element (Grasping the knowledge of HTML element, Tags and Content is as easy as... possible), we need to understand how we can get that element. There are many ways to get an element using JS (Think of them as selectors in CSS). </p>
+            <p>Getting an element by it's tag name is the simplest way (well, it depends) to get a target element. The best thing to do when accesssing an element or array of elements (more on that later) is to assign that node to a variable. You can easily log the variable to see the available methods and properties of that Node (They varies ). To get an element by it's tag name, use the following syntax: </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    const bodyEl = document.querySelector("body"); #body is the element that want to be retrieved. 
+                </div>
+            </code>
+            <p>The document provides alot of helpful method, if you're curios you can log the whole document inside of a console to get a view of what properties or values are available. (We'll delve deeper into DOM in the future). The below code is for curious people only: </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    console.log(document);
+                </div>
+            </code>
+            <p>If it doesn't display as a normal object would, a trick will be to use the window. Access the document property of the window and you'll be good to go. (To access the document property of the window object , use window.document). If it's still not logging correctly, log the window first (use window -- <i>console.log(window)</i>) then access the document property of the window. Below is the log of the document on Google chrome: </p>
+            <img src="./../assets/images/image6-4.png" class="outputImg" alt="The document object log to the console">
+            <p>You can poke around this , most importantly you should be able to access some properties of the document by now -- this is a proof you get a good grasp of Objects data type. Now let's go back to our previous code, I meant this one: </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    const bodyEl = document.querySelector("body"); //body is the element that want to be retrieved. 
+                </div>
+            </code>
+            <p>The querySelector method (or function) of the document takes in an input just like a CSS. But we can also then use just the tag name... By saying it accept the parameter just like a CSS selector, I meant those " . " (for class selector) and " # " (for ID selector) among others but excluding some.</p>
+            <p>The querySelector returns the first element with the selector we pass in as the argument. To select all element using a tag name, we use querySelectorAll and pass in the tag name (always in quote, to avoid confusion with a variable name... and who knows? Yours might be a variable instead -- in above code, you could have a variable with the value of "body" you could easily replace the parameter with that variable e.g document.querySelector(bodyTag); )</p>
+            <p>Another way to select an element using their tag name is to use the following syntax: </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    const bodyEl = document.getElementsByTagName("body"); //body is the element that want to be retrieved. 
+                </div>
+            </code>
+            <p>Just pass in the tag name. What we got in return is not just the first element as in the querySelector, but an array of element(s). To loop through (by loop through, I meant to access all the element of an array) the array, we can use a for-loop or other looping concepts but since we haven't discussed about repitition, we're going to use a method provided by the array data type. The method is forEach. forEach let us cycle through an array. But first let's try out examples with a querySelector. (<span class="sideQuizzes">querySelector accept parameters like a <label class="notForSelect sideQuizzes" ><input type="radio" name="a">Node</label><label class="notForSelect sideQuizzes"><input type="radio" name="a">CSS Selector</label></span>). The first example access the P element *P short for paragraph* and changes its text. We'll discuss more on manipulation later, this example is just to give you an idea of how we use JS to interact with a web page. </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html&gt;<br>
+                    &lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset='utf-8' /&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt; A Simple Webpage &lt;/title&gt;<br>
+                    &lt;/head&gt;<br>
+                    &lt;body&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Hello World&lt;/h2&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt; A simple &lt;span&gt;"Hello World"&lt;/span&gt; page. &lt;/p&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const p = document.querySelector("p");<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p.textContent = "I have override the previous text! Yay! I'm a bad*ss";<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+                    &lt;/body&gt;<br>
+                    &lt;/html&gt;
+                </div>
+                ... <br>
+            </code>
+            <p>We can manipulate the content of a node using its textContent property. Since this is a string, we can perform all string operations (methods and properties) with it. E.g accessing it's length. </p>
+            <p>The second example illustrates escape characters, and how to add yet another element as a content of another element. (Every time you interact with DOM, the web browser has to update the DOM Tree. Frequent updates might result in the slowness of execution of your code or web page slowness overall). </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html&gt;<br>
+                    &lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset='utf-8' /&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt; A Simple Webpage &lt;/title&gt;<br>
+                    &lt;/head&gt;<br>
+                    &lt;body&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Hello World&lt;/h2&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt; A simple &lt;span&gt;"Hello World"&lt;/span&gt; page. &lt;/p&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const p = document.querySelector("p");<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p.innerHTML = "I have override\" the previous text! Yay! &lt;del&gt;I'm a bad*ss&lt;/del&gt;";<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+                    &lt;/body&gt;<br>
+                    &lt;/html&gt;
+                </div>
+                ... <br>
+            </code>
+            <p>There's already a lot you can do with this already. Let's move on to the next, looping through an array. Imagine an array A: </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    const a = ["Sherlock Holmes", "Mycroft Holmes", "John Watson", "Moriarty"];
+                </div>
+                ... <br>
+            </code>
+            <p>And we want to access all its elements, we can use forEach method of an array to perform exactly just that. </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    const a = ["Sherlock Holmes", "Mycroft Holmes", "John Watson", "Moriarty"]; <br>
+                    a.forEach(el => { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;console.log(el); <br>
+                    });<br>
+                </div>
+                ... <br>
+            </code>
+            <p>I know the above code must look cryptic, but it's really not. The function (forEach method) takes in a function (I've used the arrow function here, more on that when we study Functions), the function needs a parameter, this parameter we can then use to perform whatever operations we wish to perform (All operations must be inside the second function code-block). </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    array.forEach(function(a){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;//perform operations on "a" <br>
+                    })<br>
+                </div>
+                ... <br>
+            </code>
+            <p>The array calls our function on all elements with a being the value of what current element it is accessing. It access them accordingly. In our example (not the one above), our el first equals "Sherlock Holmes", then "Mycoft Holmes", followed by "John Watson", then "Moriarty". There's a lot to know when it comes to forEach method of an array but we've already learnt the necessary ones. </p>
+            <p>Now, let's use this to fix our querySelectorAll and getElementsByTagName problems (We encountered this because we're returned all element matching the tag name). </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html&gt;<br>
+                    &lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset='utf-8' /&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt; A Simple Webpage &lt;/title&gt;<br>
+                    &lt;/head&gt;<br>
+                    &lt;body&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Hello World&lt;/h2&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;First Hello World!&lt;/p&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Second Hello World! &lt;/p&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const pEl = document.querySelectorAll("p");<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pEl.forEach(function(p){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p.innerHTML = "To All, \"Hello\""<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+                    &lt;/body&gt;<br>
+                    &lt;/html&gt;
+                </div>
+                ... <br>
+            </code>
+            <p>Same example, but using getElementsByTagName. </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html&gt;<br>
+                    &lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset='utf-8' /&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt; A Simple Webpage &lt;/title&gt;<br>
+                    &lt;/head&gt;<br>
+                    &lt;body&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Hello World&lt;/h2&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;First Hello World!&lt;/p&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Second Hello World! &lt;/p&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const pEl = document.getElementsByTagName("p");<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pEl.forEach(function(p){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p.innerHTML = "To All, \"Hello\""<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+                    &lt;/body&gt;<br>
+                    &lt;/html&gt;
+                </div>
+                ... <br>
+            </code>
+            <p>We encountered a bug here, that's because of the data type, we need to explicitly convert it to an array (We make use of spread operator here, more on that when we talk about Array in the future). </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html&gt;<br>
+                    &lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset='utf-8' /&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt; A Simple Webpage &lt;/title&gt;<br>
+                    &lt;/head&gt;<br>
+                    &lt;body&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Hello World&lt;/h2&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;First Hello World!&lt;/p&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Second Hello World! &lt;/p&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const pEl = document.getElementsByTagName("p");<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new Array(...pEl).forEach(function(p){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p.innerHTML = "To All, \"Hello\""<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+                    &lt;/body&gt;<br>
+                    &lt;/html&gt;
+                </div>
+                ... <br>
+            </code>
+            <p>El is just short for Element. </p>
+            <p>Now, I believe we understood how to access all elements in an array. To test yourself, do this side task: Using arrow function, log each element of the below array to the console. (You can always add side task to each day task by zipping it all together to avoid clumsiness)</p>
+            <p>Let's move on to getting element by using their Ids. Ids are unique to element it was being assigned to. Only one element can has a specific ID (To not misquote, what I'm trying to say is that two element can't have the same ID). </p>
+            <p>The process is quite easy... You can use the getElementById or querySelector or querySelectorAll (seriously, don't use this). </p>
+            <p>To use getElementById method of the document, just pass in the ID assigned to the targeted element. In below example, I try accessing and manipualting an element with "heading" ID. </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html&gt;<br>
+                    &lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset='utf-8' /&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt; A Simple Webpage &lt;/title&gt;<br>
+                    &lt;/head&gt;<br>
+                    &lt;body&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2 id='heading'&gt;Hello World&lt;/h2&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;First Hello World!&lt;/p&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Second Hello World! &lt;/p&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const headingEl = document.getElementById("heading");<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headingEl.textContent = "This is a Heading";<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+                    &lt;/body&gt;<br>
+                    &lt;/html&gt;
+                </div>
+                ... <br>
+            </code>
+            <p>querySelector method should be familiar by now:</p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html&gt;<br>
+                    &lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset='utf-8' /&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt; A Simple Webpage &lt;/title&gt;<br>
+                    &lt;/head&gt;<br>
+                    &lt;body&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2 id='heading'&gt;Hello World&lt;/h2&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;First Hello World!&lt;/p&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Second Hello World! &lt;/p&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const headingEl = document.querySelector("#heading");<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headingEl.textContent = "This is a Heading";<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+                    &lt;/body&gt;<br>
+                    &lt;/html&gt;
+                </div>
+                ... <br>
+            </code>
+            <p>seriously, if you have a profound knowledge of CSS selectors, querySelector and querySelectorAll methods of the document object are your friend. Literally. </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html&gt;<br>
+                    &lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset='utf-8' /&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt; A Simple Webpage &lt;/title&gt;<br>
+                    &lt;/head&gt;<br>
+                    &lt;body&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2 id='heading'&gt;Hello World&lt;/h2&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;First Hello World!&lt;/p&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Second Hello World! &lt;/p&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const headingEl = document.querySelectorAll("#heading");<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headingEl.forEach(function(el){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;el.innerHTML = "This is a Heading";<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+                    &lt;/body&gt;<br>
+                    &lt;/html&gt;
+                </div>
+                ... <br>
+            </code>
+            <p>Always abstract from using querySelectorAll with ID Selectors. </p>
+            <p>Next, we have how to get elements using their class. Apparently class names are not unique, unlike IDs. Two or more elements can have the same class name. We can use querySelector , querySelectorAll and getElementsByClassName.</p>
+            <p>querySelector and querySelectorAll works with class selector as with CSS selectors, so I won't discuss much on that. </p>
+            <p>getElementsByClassName takes in a parameter of the class we want to access and returns an array of all elements with the class name. </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html&gt;<br>
+                    &lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset='utf-8' /&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt; A Simple Webpage &lt;/title&gt;<br>
+                    &lt;/head&gt;<br>
+                    &lt;body&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Hello World&lt;/h2&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;First Hello World!&lt;/p&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Second Hello World! &lt;/p&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const pEl = document.getElementsByClassName("p");<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pEl.forEach(function(p){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p.innerHTML = "To All, \"Hello\""<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+                    &lt;/body&gt;<br>
+                    &lt;/html&gt;
+                </div>
+                ... <br>
+            </code>
+            <p>Same bug we encountered when using getElementsByTagName... But luckily we knew how to fix this. (<span class="sideQuizzes">How to fix this? <label class="notForSelect sideQuizzes" ><input type="radio" name="c">By fixing it to collection</label><label class="notForSelect sideQuizzes"><input type="radio" name="a">By converting it to an array using spread operator</label></span>)</p>
         </section>
         <section id="task">
             <h2>Task</h2>
@@ -49,21 +387,7 @@
     <div id="message"></div>
     <pre>
 
-
-
-        
     </pre>
-    <fieldset class="ad">
-        <legend>ADS</legend>
-        <iframe src="https://www.profitablecpmrate.com/irra5dti?key=3a73537c4f97d61429727a394fbbfa41"></iframe>    
-        <iframe src="https://www.profitablecpmrate.com/irra5dti?key=3a73537c4f97d61429727a394fbbfa41"></iframe>
-        <iframe src="https://www.profitablecpmrate.com/irra5dti?key=3a73537c4f97d61429727a394fbbfa41"></iframe>
-        <iframe src="https://www.profitablecpmrate.com/irra5dti?key=3a73537c4f97d61429727a394fbbfa41"></iframe>
-        <iframe src="https://www.profitablecpmrate.com/irra5dti?key=3a73537c4f97d61429727a394fbbfa41"></iframe>
-        <iframe src="https://www.profitablecpmrate.com/irra5dti?key=3a73537c4f97d61429727a394fbbfa41"></iframe>
-        <iframe src="https://www.profitablecpmrate.com/irra5dti?key=3a73537c4f97d61429727a394fbbfa41"></iframe>
-    </fieldset>
-
     <script src="script/script.js" type="module"></script>
     <script src="./../js/copy.js"></script>
     <script src="./../js/days_nav.js"></script>
