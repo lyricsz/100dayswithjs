@@ -1,18 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset='utf-8' />
-    <title> A Simple Webpage </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM (Document Object Model) - 100 Days with JS - Day 6</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <h2>Hello World</h2>
-    <p class="p">First Hello World!</p>
-    <p class="p">Second Hello World! </p>
-    <script>
-        const pEl = document.getElementsByClassName("p");
-        Array(...pEl).forEach(function(p){
-            p.innerHTML = "To All, \"Hello\""
-        })
-    </script>
+    <header>
+        <h1>100 Days With JavaScript</h1>
+        <nav>
+            <ul>
+                <li><a href="./">Home</a></li>
+                <li><a href="./days">JS 100</a></li>
+                <li><a href="./about">About</a></li>
+                <li><a href="./contact">Contact</a></li>
+            </ul>
+        </nav>
+        <aside>
+            <select name="6" id="select">
+
+            </select>
+        </aside>
+    </header>
+    <main>
+        <nav>
+            <ol>
+                <li> <a href="#introduction"> Introduction </a> </li>
+                <li> <a href="#tutorial"> Lesson </a> </li>
+                <li> <a href="#task"> Task </a> </li>
+            </ol>
+        </nav>
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>Hey! Congrats for making it this far! Today's lesson is the continuation of the previous lesson (<a href="./../day6/">Day 6</a>). We'll learn how to manipulat CSS, Attribute, and JS of a Node. We'll also learn hoe to create an Element! em em! A node rather! </p>
+        </section>
+        <section id="tutorial">
+            <h2>Tutorial</h2>
+            <p>Quick question. </p>
+        </section>
+
+        <section id="task">
+            <h2>Task</h2>
+        </section>
+    </main>
+
+    <div id="message"></div>
+    <pre>
+
+    </pre>
+    <script src="script/script.js" type="module"></script>
+    <script src="./../js/copy.js"></script>
+    <script src="./../js/days_nav.js"></script>
 </body>
 </html>

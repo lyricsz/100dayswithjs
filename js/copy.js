@@ -16,14 +16,26 @@ document.querySelectorAll("div.copy").forEach((el, index) => {
 async function copy(a){
     const key = a.target.accessKey
     const wordToCopy = document.getElementById(key);
-    await navigator.clipboard.writeText(wordToCopy.outerText) 
-    .then (onfulfilled = (message) => {
-        showSuccess("Copying...");
-    }).catch(err => {
-        showFailure(err);
-    }).finally((err) => {
-        setTimeout(done, 1000, err)
-    })
+    if (navigator.clipboard != undefined){
+        await navigator.clipboard.writeText(wordToCopy.outerText) 
+        .then (onfulfilled = (message) => {
+            showSuccess("Copying...");
+        }).catch(err => {
+            showFailure(err);
+        }).finally((err) => {
+            setTimeout(done, 1000, err)
+        })
+    } else {
+        await unsecuredCopyToClipboard.writeText(wordToCopy.outerText) 
+        .then (onfulfilled = (message) => {
+            showSuccess("Copying...");
+        }).catch(err => {
+            showFailure(err);
+        }).finally((err) => {
+            setTimeout(done, 1000, err)
+        })
+    }
+   
 }
 
 function showFailure(message){

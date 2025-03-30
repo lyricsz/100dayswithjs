@@ -378,10 +378,107 @@
                 ... <br>
             </code>
             <p>Same bug we encountered when using getElementsByTagName... But luckily we knew how to fix this. (<span class="sideQuizzes">How to fix this? <label class="notForSelect sideQuizzes" ><input type="radio" name="c">By fixing it to collection</label><label class="notForSelect sideQuizzes"><input type="radio" name="a">By converting it to an array using spread operator</label></span>)</p>
+            <p>We can also retrieve element/elements by using their name. Names (e.g &lt;a href='www.google.com' name='googlelink' /&gt;). Names are used for whatever purpose you're using it for. But it can also be used by JavaScript to get the element(s) with that name. Let's take a look at an example: </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html&gt;<br>
+                    &lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset='utf-8' /&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt; A Simple Webpage &lt;/title&gt;<br>
+                    &lt;/head&gt;<br>
+                    &lt;body&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Hello World&lt;/h2&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p name='paragraph'&gt;First Hello World!&lt;/p&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p name='paragraph'&gt;Second Hello World! &lt;/p&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const pEl = document.getElementsByName("paragraph");<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pEl.forEach(function(p){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p.innerHTML = "To All, \"Hello\""<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+                    &lt;/body&gt;<br>
+                    &lt;/html&gt;
+                </div>
+                ... <br>
+            </code>
+            <p>The getElementsByName method of the document accepts the name of the element(s) we're targeting. It returns an array containing those element(s) (As a node). </p>
+            <p>Now that we've discussed the basic ways of retrieving a Node, let's talk about manipulating a Node. We're going to discuss how to manipulate only it's content today, as we'll discuss about how to manipulate its Attributes, CSS and JS in day 7. (We'll be splitting this DOM Part into two to avoid cluttering). </p>
+            <p>We'll be using getElementById the most in this tutorial. Feel free to follow along or use other method you prefer to work with. To change the text of any element, we can modify the textContent property of that node (Casing in JavaScript matters, we can already note that built in methods use camelCase for naming things). </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html&gt;<br>
+                    &lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset='utf-8' /&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt; A Simple Webpage &lt;/title&gt;<br>
+                    &lt;/head&gt;<br>
+                    &lt;body&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2 id='greetingsEl'&gt;Hello World&lt;/h2&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const name = prompt("Enter your name: ");
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const greetingsEl = document.getElementsById("paragraph");<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;greetingsEl.textContent = "Hello " + name;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+                    &lt;/body&gt;<br>
+                    &lt;/html&gt;
+                </div>
+                ... <br>
+            </code>
+            <p>Above code may looks cryptic at first. I'll assume we all knew HTML5. So, let's break down the code part (JS Part): </p>
+            <ul>
+                <li>The <i>const name = prompt("Enter your name: ")</i> send a prompt to the user (visitor) with a hint to enter his/her/it name. </li>
+                <li>The second line get an element with an ID of "<i>paragraph</i>". In our case that is the (//)</li>
+                <li>The third line changes the content of that element to "Hello " + name. Since name is being replaced with the user's name. </li>
+            </ul>
+            <p>You can try adding tags directly to the textContent property of a Node. But it won't work. It only expects a text. It'll treat anything it saw as a text not as an Element. To add element as the content of our Node, we modify the innerHTML property of our Node. Here, where we put our Tag, will be replaced by that tag (Don't forget to wrote them as you'll have did using HTML). </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html&gt;<br>
+                    &lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset='utf-8' /&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt; A Simple Webpage &lt;/title&gt;<br>
+                    &lt;/head&gt;<br>
+                    &lt;body&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2 id='greetingsEl'&gt;Hello World&lt;/h2&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const name = prompt("Enter your name: ");
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const greetingsEl = document.getElementsById("paragraph");<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;greetingsEl.innerHTML = "Hello " + "&lt;i&gt;" name + "&lt;/i&gt;";<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+                    &lt;/body&gt;<br>
+                    &lt;/html&gt;
+                </div>
+                ... <br>
+            </code>
+            <p>Voila! You can go ahead and add other tags to it. We'll discuss about other methods of doing this, alongside how to  modify or add attributes to a Node, how to modify / or add CSS and JavaScript to a Node and I'll see you in the next lesson. </p>
         </section>
         <section id="task">
             <h2>Task</h2>
-            <p></p>
+            <p>The task of today is simple! Using all the methods described in this tutorial to retrieve an Element (Node), use them one by one to retrieve the P context of the following (Do it however you like): </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html lang='en'&gt;<br>
+                    &lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt; A Simple Webpage &lt;/title&gt;<br>
+                    &lt;/head&gt;<br>
+                    &lt;body&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Howdy?&lt;/h2&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Your code goes here!
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+                    &lt;/body&gt;<br>
+                    &lt;/html&gt;
+                </div>
+            </code>
+            <p>There are two ways to go about this, you can seperate them into functions. Or create new HTML files for each methods. </p>
+            <p>If you're confused of this task , kindly message any of the admins for further clarification</p>
         </section>
     </main>
     <div id="message"></div>
