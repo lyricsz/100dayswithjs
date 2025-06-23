@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM (Document Object Model) - 100 Days with JS - Day 6</title>
+    <title>DOM (Document Object Model) Part 2 - 100 Days with JS - Day 7</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -37,11 +37,314 @@
         </section>
         <section id="tutorial">
             <h2>Tutorial</h2>
-            <p>Quick question. </p>
+            <p>Reviewing the past lesson (lesson 6) is so crucial for this lesson. If you haven't done so yet, kindly do so now. If you've forget some of the concepts taught in the previous lesson, don't worry you'll be able to follow the lesson. Knowing about how to get an element (node) using  any of the selectors is crucial to continue. We'll use the getElementById method the most in this lesson. </p>
+            <p>Let's visit a simple example - Modifying the content of a paragraph element. </p>
+            <code>
+                <div class="copy">
+                    const pEl = document.getElementById("p");<br>
+                    pEl.textContent = "Hello World!"
+                </div>
+            </code>
+            <p>Assuming there's an element in your page with the id attribute of p, the element's content will always be replaced by "Hello World!". Only one element has to have the ID since ID's are unique. But then the question this poses is this... What if you don't want to only modify the content (A quick refresh -- to add html directly as the content of the selected node, just override the innerHTML method to match the html code. E.g pEl.innerHTML = "&lt;i&gt; Hello World! &lt;/i&gt;"), but also the CSS or the function (JS) of the node (element). You can do this in JavaScript as easy as possible. Just select the node and assign / override the CSS or JS. </p>
+            <p>To change the CSS of an element, we can follow the below syntax (With pEl being the selected element). </p>
+            <code>
+                <div class="copy">
+                    pEl.style.property = "new property value";<br>
+                </div>
+            </code>
+            <p>This is just the skeleton. The property here can represent all property. The value also represent the valid property value you want to assign to that property. You can change the CSS of any element using this method. Let's try out an example: </p>
+            <code>
+                <div class="copy">
+                    const pEl = document.getElementById("p");<br>
+                    pEl.textContent = "Hello World!"
+                    pEl.style.color = "green";<br>
+                </div>
+            </code>
+            <p>In the above example, we can notice that after selecting the element with the ID of "p", not only did we change the content of that element we also modify the CSS of that element by changing it's color to green. You can of course change other properties of the element. But this is where it gets interesting, what of how to change the values of properties like 'background-color'? We can't use "-" as a part of a variable name. To fix this, we can use the well known naming convention called camelCase. So instead of using background-color, we can use backgroundColor. This is the same for all CSS properties that contain a "-". Let's try out an example: </p>
+            <code>
+                <div class="copy">
+                    const pEl = document.getElementById("p");<br>
+                    pEl.textContent = "Hello World!";<br>
+                    pEl.style.color = "red";<br>
+                    pEl.style.borderRadius = "20px";<br>
+                    pEl.style.backgroundColor = "green";<br>
+                </div> 
+            </code>
+            <p>A valid full listing code is given below just in case: </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html lang='en'&gt;<br>
+                    &lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt; A Simple Webpage &lt;/title&gt;<br>
+                    &lt;/head&gt;<br>
+                    &lt;body&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Howdy?&lt;/p&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const pEl = document.getElementById("p");<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pEl.textContent = "Hello World!";<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pEl.style.color = "red";<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pEl.style.borderRadius = "20px";<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pEl.style.backgroundColor = "green";<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+                    &lt;/body&gt;<br>
+                    &lt;/html&gt;
+                </div>
+            </code>
+            <p>In this example, we saw our we can use camelCase naming convention to fix the problem we encountered with property that have more than one word. Always take note of the capitalization, while the copying and pasting feature is there to help you, rarely use it... instead type the code by yourself. As a friend of mine used to say "Get used to typing". </p>
+            <p>Let's move on to how we can modify an element's (node) attribute. The element attribute can be a valid attribute or not. What matters is that you know what that attribute's value is (the new value) as it will override the previous attribute's value. Let's try out an example: (We use a little bit of CSS here to explain things)</p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html lang='en'&gt;<br>
+                    &lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt; A Simple Webpage &lt;/title&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;style&gt;<br> 
+                    &nbsp;&nbsp;&nbsp;&nbsp; .red {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: red;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; .blue {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: blue;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    &lt;/style&gt;<br>
+                    &lt;/head&gt;<br>
+                    &lt;body&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="red" id="p"&gt;Howdy?&lt;/p&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const pEl = document.getElementById("p");<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pEl.textContent = "Hello World!";<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pEl.setAttribute("class", "blue")<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+                    &lt;/body&gt;<br>
+                    &lt;/html&gt;
+                </div>
+                ...
+            </code>
+            <p>In the above example, we make use of two classes in the CSSS selectors. If an element has a class of red, we set it's color to red ,else , if it's .blue we set it's color to blue. However, we initally set the element (P element) class to red, then we override this using this line of code -- pEl.setAttribute("class", "blue") --. This line of code calls the setAttribute method of an element, we pass in the attribute first (in double quote -- " ") , then the second argument is the value of that attribute. </p>
+            <p>To better understand this clearly, let us add CSS to an element using the style attribute. We'll be changing things a bit. In the below example we'll add the style using setAttribute method (Remember from our HTML lessons, we can use the style attribute to add a CSS (Inline CSS) to our element).</p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html lang='en'&gt;<br>
+                    &lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt; A Simple Webpage &lt;/title&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;style&gt;<br>  
+                    &nbsp;&nbsp;&nbsp;&nbsp;#white { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border: 20px solid #eee; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/style&gt;<br>
+                    &lt;/head&gt;<br>
+                    &lt;body&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p id="red"&gt;Howdy?&lt;/p&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const pEl = document.getElementById("p");<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const cssAttr = "" + <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"color: red; background-color: green;";<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pEl.textContent = "Hello World!";<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pEl.setAttribute("style", cssAttr);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pEl.setAttribute("id", "white");<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+                    &lt;/body&gt;<br>
+                    &lt;/html&gt;
+                </div>
+                ...
+            </code>
+            <p>In the above example, we're adding two attributes to the HTML Element by using the .setAttribute method. Investigate the code very well before continuing with the rest of the lesson. </p>
+            <p>Next up, to add JS code to HTML. This is a very broad topic, as we still have to think in terms of Events, Functions, e.t.c. But to make it short, we're going to explain just briefly some basic examples as we'll go into further details in  the future. </p>
+            <p>We can easily use the setAttribute method to add JS to our elements, but instead of it being like other attributes, we make use of events. Let's check an example: </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html lang='en'&gt;<br>
+                    &lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt; A Simple Webpage &lt;/title&gt;<br>
+                    &lt;/head&gt;<br>
+                    &lt;body&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;button onclick="alert('Hello World')"&gt;Howdy?&lt;/p&gt;<br>
+                    &lt;/body&gt;<br>
+                    &lt;/html&gt;
+                </div>
+                ...
+            </code>
+            <p>The onclick attribute here fires up whatever is in it's value (Executing them as JS Code). However, onclick is not just an attribute, it is an event that fires up whenever we click the button. Go ahead and click the button, the code -- alert("Hello World") -- gets fired. Now take a look at how to achieve the same functionality with setAttribute method: </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html lang='en'&gt;<br>
+                    &lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt; A Simple Webpage &lt;/title&gt;<br>
+                    &lt;/head&gt;<br>
+                    &lt;body&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;button&gt;Howdy?&lt;/p&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const btn = document.querySelector("button");<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btn.onclick = () => {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Hello World")<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+                    &lt;/body&gt;<br>
+                    &lt;/html&gt;
+                </div>
+                ...
+            </code>
+            <p>Now the code might seem absurd, but take a look at it very well, instead of just calling a method or function, we add a whole function so now we can go ahead and add more to that block of code (Clicking event can now execute more than 1 function, add another alert to the function or any code you want and it will run effectively)</p>
+            <p>Before learning how to create a node, try and add the click event to the above element using setAttribute method. This helps reinforce the learning. (Note: We'll talk about events in the future lessons)</p>
+            <p>To create a node, we have many ways for some elements (e.g Audio and Video). But before that, in the last example we're making use of setAttribute shortcut which is 'element.property = value'.</p>
+            <p>Let's go ahead and create an element. </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    const element = document.createElement(elementName);
+                </div>
+                ... <br>
+            </code>
+            <p>Example of the above syntax: </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    const p = document.createElement("p");
+                </div>
+                ... <br>
+            </code>
+            <p>Don't forget, If we don't put strings in quotes they're treated as variables. </p>
+            <p>Now we've created a paragraph element, the next step is to add it to the page and one way to do this is to add it as a child of another element. This is actually how we add most contents to the page using pure HTML. For example, the body tag is nested to the HTML (or root) tag. The title tag is nested to the head tag. (Note: Nested means putting one element inside another element)</p>
+            <p>Let's try to add the above paragraph element we created earlier as a child of the body tag. </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    const p = document.createElement("p");
+                    document.body.appendChild(p);
+                </div>
+                ... <br>
+            </code>
+            <p>Now, you may be thinking, "Why the heck is the element not showing up yet?". It's actually already on the page right now, what was needed to be done was to add a text (as the content) to the paragraph. Let's go ahead and write Hello World to the page.</p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    const p = document.createElement("p");
+                    p.textContent = "Hello World";
+                    document.body.appendChild(p);
+                </div>
+                ... <br>
+            </code>
+            <p>Voila! We got the element displayed correctly. You can also log the node to the console directly to watch how changes in properties or methods affect the node. </p>
+            <p id="taskOverview">There are many things we can do with what was learnt already. E.g We can create a basic calculator that adds to number if the "Add Me" button was clicked. Or A button that keeps adding "Hello World" to the page when clicked. Or a background color changer that changes the color if we press "Change Color" button. This are all something you can now created , armed with this and all previous lessons. But what we're going to build today is a little bit different. </p>
+            <p>Remember how we've built A sentence length counter in the previous projects? (Using String.length) Today, we're going to build that exact project, but now, we'll make use of textboxes and buttons. Let's get started!!!</p>
+            <p>Let's take a look at the elements we need: 
+                <ul>
+                    <li>First of all, we needed like a H1 or H2 tag to add the page heading. </li>
+                    <li>We need a little bit of description of what the page was all about. </li>
+                    <li>A textbox for the user to enter the text. </li>
+                    <li>A button that hints what it's functionality is all about. E.g Count Letters</li>
+                    <li>A paragraph with the amound of letters available on the page. </li>
+                </ul>
+            </p>
+            <p>Now that we've got an overview of the project, let's start with the HTML. Fire up your code / text editor, type in the following code: </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                &lt;!DOCTYPE html&gt;<br>
+                &lt;html lang='en'&gt;<br>
+                &lt;head&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt; Project Character Counter &lt;/title&gt; <br>
+                &lt;/head&gt;<br>
+                &lt;body&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt; Character Counter &lt;/h1&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt; Type text in the box below, click the button below and it tells you the number of characters your text contains. E.g "I am a Person" contains 13 letters (Spaces included). &lt;/p&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;textarea&gt;Hello&lt;/textarea&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;button id='calcBtn'&gt;Count&lt;/button&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;p id="message"&gt; Letters: 5 &lt;/p&gt; <br>
+                &lt;/body&gt;<br>
+                &lt;/html&gt;<br>
+                </div>
+                ... <br>
+            </code>
+            <p>Now that we've got the HTML up and running, time to add some CSS!</p>
+            <p>You know the process. Add style tag (Internal CSS) or use External CSS. Add the following CSS to the project: </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    *{<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;margin: 0;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;max-width: 80vw;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;margin-left: auto;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;margin-right: auto;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;box-sizing: border-box;<br>
+                    }<br>
+                    <br>
+                    h1 { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;color: teal;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;text-align: center;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;padding: 10px;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;<br>
+                    }<br>
+                    <br>
+                    p { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;font-family: Tahoma, Sans-serif;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;font-weight: 700;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;text-indent: 20px;<br>
+                    }<br>
+                    <br>
+                    textarea {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;width: 100%;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;min-height: 200px;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;height: auto;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;font-size: large;<br>
+                    }<br>
+                    <br>
+                    #calcBtn {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;background-color: teal; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;color: #eee;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;border-radius: 10px;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;border: none;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;padding: 10px;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;margin: 4px;<br>
+                    }<br>
+                    <br>
+                    #calcBtn:active {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;background-color: rgb(100, 128, 128);<br>
+                    }<br>
+                </div>
+                ... <br>
+            </code>
+            <p>And now to the main and most important part of the project, the "Functionality". First of all, we need the button element, the paragraph to send the message back to the user (notice the element with the id of "message"), the textarea to get the text the user enters. Let's do just that. </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    let text = document.querySelector("textarea");<br>
+                    const message = document.getElementById("message");<br>
+                    <br>
+                    calcBtn.onclick = () => {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;alert("Button Clicked!!!"); <br>
+                    }
+                </div>
+                ...<br>
+            </code>
+            <p>I believe we completely understand the above snippet of code. Now, when we clicked the button we don't want it to alert anything. We want to count the length of the text the user enters and output it as the text content of the message variable (Message now refers to a node). </p>
+            <p>So, how'd we achieve this? Simple! Get the value of the textarea (the text), get its length and output it. Super easy! Below is the revised function: </p>
+            <code>
+                ... <br>
+                <div class="copy">
+                    ... <br>
+                    calcBtn.onclick = () => {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;const lettersFound = text.length;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;message.textContent = "Letters: " + lettersFound;<br>
+                    }<br>
+                </div>
+                ...<br>
+            </code>
+            <p>And there we go! An improved letter counter. And that marks it for today's lesson. In the next lesson, we'll learn more about "Numbers". </p>
         </section>
 
         <section id="task">
             <h2>Task</h2>
+            <p>Today's task is relatively simple compared with the project done in the lesson. Pick one of the projects mentioned <a href="#taskOverview">Here</a> and try to see if you can complete it all by yourself. If you're stuck, try solving it. Don't go to chatgpt or any AI. Try solving it and If you're really stuck, DM me on WhatsApp and I'll share hints with you. That's how we really learn, bro. </p>
         </section>
     </main>
 
